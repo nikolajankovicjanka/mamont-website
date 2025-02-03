@@ -1,6 +1,7 @@
 
 const images = {
     mamont: require('@/assets/images/images/mamont.jpg'),
+    mamontLogo: require('@/assets/images/images/mamont-logo.png'),
     whoWeAre: require('@/assets/images/images/whoweare.jpg'),
     image1:  require('@/assets/images/images/image1.jpg'),
     image2:  require('@/assets/images/images/image2.jpg'),
