@@ -15,6 +15,27 @@
     }
 }
 
+/* Stil za navbar prije skrolanja */
+.fixed-navbar {
+    position: absolute; /* Postavi navbar na sredinu ekrana */
+    top: 50%; /* Centrira navbar vertikalno */
+    left: 50%; /* Centrira navbar horizontalno */
+    transform: translate(-50%, -50%); /* Centrira navbar */
+    width: 100%; /* Navbar će zauzimati cijelu širinu */
+    max-width: 1300px; /* Ograniči širinu na istu širinu kao container */
+    transition: all 0.3s ease; /* Dodaj animaciju za promjenu pozicije i boje */
+    z-index: 1000; /* Osiguraj da je navbar iznad ostalog sadržaja */
+}
+
+/* Stil za navbar nakon skrolanja */
+.fixed-navbar.sticky {
+    position: fixed; /* Fiksira navbar na vrhu */
+    top: 0; /* Postavi ga na vrh stranice */
+    left: 50%; /* Centrira navbar horizontalno */
+    transform: translateX(-50%); /* Centrira navbar horizontalno */
+    background: white !important;
+}
+
 .projects-section .project-title p {
     margin-bottom: 30px;
 }
@@ -48,7 +69,7 @@
     text-transform: uppercase;
     color: #fff;
     display: inline-block;
-    background: #07c5ac;
+    background: #286eab;
     position: relative;
     border-radius: 3px;
     font-size: 14px;
@@ -72,7 +93,7 @@
     left: 0;
     bottom: -100%;
     padding: 20px 25px;
-    background: rgba(7, 197, 172, 0.9);
+    background: #286eab;
     transition: all 0.4s ease-in-out;
     -moz-transition: all 0.4s ease-in-out;
     -webkit-transition: all 0.4s ease-in-out;
