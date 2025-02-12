@@ -4,35 +4,38 @@
 }
 
 .font-header {
-    font-size: 25px;
+    font-size: 20px;
+    font-weight: bolder;
     
     a {
         color: #286eab;
     }
     a:hover {
         color: #2267a6;
-        border-bottom: .1px solid #286eab;
+        border-bottom: 1px solid #286eab;
     }
 }
 
-/* Stil za navbar prije skrolanja */
+
 .fixed-navbar {
-    position: absolute; /* Postavi navbar na sredinu ekrana */
-    top: 50%; /* Centrira navbar vertikalno */
-    left: 50%; /* Centrira navbar horizontalno */
-    transform: translate(-50%, -50%); /* Centrira navbar */
-    width: 100%; /* Navbar će zauzimati cijelu širinu */
-    max-width: 1300px; /* Ograniči širinu na istu širinu kao container */
-    transition: all 0.3s ease; /* Dodaj animaciju za promjenu pozicije i boje */
-    z-index: 1000; /* Osiguraj da je navbar iznad ostalog sadržaja */
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 1300px;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    -webkit-box-shadow: 0px 23px 12px -15px rgba(40,110,171,0.71);
+    -moz-box-shadow: 0px 23px 12px -15px rgba(40,110,171,0.71);
+    box-shadow: 0px 23px 12px -15px rgba(40,110,171,0.71);
 }
 
-/* Stil za navbar nakon skrolanja */
 .fixed-navbar.sticky {
-    position: fixed; /* Fiksira navbar na vrhu */
-    top: 0; /* Postavi ga na vrh stranice */
-    left: 50%; /* Centrira navbar horizontalno */
-    transform: translateX(-50%); /* Centrira navbar horizontalno */
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
     background: white !important;
 }
 
@@ -236,6 +239,4 @@
 .about-section .who-content p{
     color: #E9FFFC;
 }
-#container{
-    overflow: hidden;
-}
+

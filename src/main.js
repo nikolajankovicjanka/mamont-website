@@ -1,5 +1,6 @@
 import { createApp } from 'vue';
 import App from './App.vue';
+import router from './router';
 import'./style/index.scss'
 
 import BootstrapVue3 from 'bootstrap-vue-3';
@@ -16,6 +17,7 @@ import Image from './plugins/Image'
 
 const app = createApp(App);
 app.use(BootstrapVue3);
+app.use(router);
 app.use(Image)
 app.use(PrimeVue);
 app.mount('#app');
