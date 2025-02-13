@@ -1,10 +1,6 @@
 .primary-color {
     color: #286eab;
 }
-
-.news-section {
-    padding: 70px 0 70px;
-}
 .news-section .news-post {
     margin-bottom: 30px;
 }
@@ -25,7 +21,7 @@
     -moz-transition: all 0.2s ease-in-out;
     -webkit-transition: all 0.2s ease-in-out;
     -o-transition: all 0.2s ease-in-out;
-    color: #222222;
+    color: #16558c;
     font-size: 15px;
     text-transform: uppercase;
     font-weight: 600;
@@ -37,7 +33,7 @@
     text-align: center;
 }
 .news-section .news-post h2 a:hover {
-    color: #286eab;
+    color: #3e8bcb;
 }
 .news-section .news-post span {
     display: inline-block;
@@ -126,4 +122,29 @@
     height: auto;
     display: block;
     border-radius: 8px;
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 60px;
+    right: 70px;
+    width: 60px;
+    height: 60px;
+    background-color: #286eab;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 20px;
+    -moz-border-radius: 200px 200px 200px 200px;
+    -webkit-border-radius: 200px 200px 200px 200px;
+    border: 1px solid #ffffff;
+    transition: background-color 0.3s ease;
+    z-index: 1000;
+}
+
+.back-to-top:hover {
+    background-color: #0056b3;
 }
