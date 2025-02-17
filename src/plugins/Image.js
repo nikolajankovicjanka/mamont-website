@@ -1,4 +1,5 @@
-import images from '../assets/images/index';
+// src/plugins/Image.js
+import images from '../assets/images';  // Importujte slike iz src/assets/images/index.js
 
 const Image = {
     install: function (app) {
@@ -6,7 +7,7 @@ const Image = {
             if (images[img]) {
                 return images[img];
             } else {
-                console.error(`Image '${img}' not found in images object.`);
+                console.error(`Slika '${img}' nije pronađena u objektu slika.`);
                 return '';
             }
         };

@@ -1,24 +1,26 @@
 <template>
     <b-navbar toggleable="lg" type="dark" variant="transparent" class="fixed-navbar" :class="{ 'sticky': isSticky }" ref="navbar">
-        <b-navbar-brand @click="navigateTo('/')">
-            <img :src="logo" style="max-width: 200px; max-height: 50px" alt="Logo" class="navbar-logo" />
+        <b-navbar-brand style="padding-left: 3rem" @click="navigateTo('/')">
+            <img src="/assets/images/test_images/mamont-logo.png" style="max-width: 200px; max-height: 50px" alt="Logo" class="navbar-logo" />
         </b-navbar-brand>
 
         <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
         <b-collapse class="justify-content-end" id="nav-collapse" is-nav>
             <b-navbar-nav class="font-header">
-                <b-nav-item @click="navigateTo('/about')">O nama</b-nav-item>
-                <b-nav-item @click="navigateTo('/services')">Usluge</b-nav-item>
-                <b-nav-item @click="navigateTo('/projects')">Projekti</b-nav-item>
-                <b-nav-item @click="navigateTo('/tim')">Naš tim</b-nav-item>
-            </b-navbar-nav>
+                <b-nav-item @click="navigateTo('/')">{{ $t('common.home') }}</b-nav-item>
+                <b-nav-item @click="navigateTo('/about')">{{ $t('common.o_nama') }}</b-nav-item>
+                <b-nav-item @click="navigateTo('/services')">{{ $t('common.usluge') }}</b-nav-item>
+                <b-nav-item @click="navigateTo('/projects')">{{ $t('common.projekti') }}</b-nav-item>
+                <b-nav-item @click="navigateTo('/tim')">{{ $t('common.nas_tim') }}</b-nav-item>
 
-            <!-- Right aligned nav items -->
-            <b-navbar-nav class="ml-auto">
-                <b-nav-item-dropdown text="SR" right>
-                    <b-dropdown-item href="#">EN</b-dropdown-item>
-                    <b-dropdown-item href="#">DE</b-dropdown-item>
+                <b-nav-item-dropdown right>
+                    <template #button-content>
+                        {{ locale === 'sr' ? 'SR' : locale === 'en' ? 'EN' : 'DE' }}
+                    </template>
+                    <b-dropdown-item @click="changeLanguage('sr')">SR</b-dropdown-item>
+                    <b-dropdown-item @click="changeLanguage('en')">EN</b-dropdown-item>
+                    <b-dropdown-item @click="changeLanguage('de')">DE</b-dropdown-item>
                 </b-nav-item-dropdown>
             </b-navbar-nav>
         </b-collapse>
@@ -27,29 +29,38 @@
 
 <script>
 import { ref, onMounted, onBeforeUnmount } from 'vue';
+import { useI18n } from 'vue-i18n';
+import { useRouter } from 'vue-router';
+import { loadLocaleMessages } from '@/plugins/i18n';
 
 export default {
     name: "NavBar",
-    props: {
-        logo: {
-            type: String, // Tip propa je String (putanja do slike)
-            required: true // Ovo osigurava da je prop obavezan
-        }
-    },
     setup() {
+        const { locale } = useI18n();
+        const router = useRouter();
         const isSticky = ref(false);
         const navbar = ref(null);
 
+        const changeLanguage = async (lang) => {
+            await loadLocaleMessages(lang);
+            locale.value = lang;
+            localStorage.setItem('userLanguage', lang);
+        };
+
+        const navigateTo = (route) => {
+            router.push(route);
+        };
+
         const handleScroll = () => {
-            if (window.scrollY > 50) {
-                isSticky.value = true;
-            } else {
-                isSticky.value = false;
-            }
+            isSticky.value = window.scrollY > 50;
         };
 
         onMounted(() => {
             window.addEventListener('scroll', handleScroll);
+            const savedLanguage = localStorage.getItem('userLanguage');
+            if (savedLanguage) {
+                locale.value = savedLanguage;
+            }
         });
 
         onBeforeUnmount(() => {
@@ -59,13 +70,11 @@ export default {
         return {
             isSticky,
             navbar,
+            navigateTo,
+            changeLanguage,
+            locale,
         };
     },
-    methods: {
-        navigateTo(route) {
-            this.$router.push(route);
-        }
-    }
 }
 </script>
 
@@ -75,7 +84,7 @@ export default {
     top: 0;
     width: 100%;
     z-index: 1000;
-    background-color: rgba(0, 0, 0, 0.8); /* Dodajte željenu pozadinsku boju */
-    transition: background-color 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.8);
+    transition: all 0.3s ease;
 }
 </style>

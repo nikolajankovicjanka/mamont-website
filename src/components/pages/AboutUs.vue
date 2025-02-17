@@ -1,11 +1,11 @@
 <template>
-    <div  class="container mt-4 mb-5">
+    <div  class="container-fluid p-0 mt-4 mb-5">
         <div>
             <svg viewBox="0 0 24 24" class="icons-mamont">
                 <path :d="mdiLightbulbOn10  " />
             </svg>
-            <h1 class="primary-color naslov-tekst custom-border">O nama</h1>
-            <h5 class="primary-color mb-4">Naša firma je na tržištu centralne evrope zastupljena i bavi se velikim brojem usluga iz oblasti montaže, ugradnje, instalacija i mnogih drugih usluga Elektro energije.</h5>
+            <h1 class="primary-color naslov-tekst custom-border">{{ t('common.o_nama')  }}</h1>
+            <h5 class="primary-color mb-4">{{ t('about_us.mi_smo_kompanija_mamont')  }}</h5>
         </div>
         <section class="about-section">
             <div class="container">
@@ -15,44 +15,47 @@
                             <path :d="mdiHomeLightningBoltOutline   " />
                         </svg>
                         <div class="project-title title title2">
-                            <h2 class="box-header border-bottom mt-2">Ko smo mi?</h2>
+                            <h2 class="box-header border-bottom custom-border mt-2">{{ t('about_us.ko_smo_mi')  }}</h2>
                         </div>
-                        <p>Firma sa  dugogodišnjim iskustvom i posvećenošću kvalitetu, pružamo sveobuhvatna rješenja u oblasti elektroinstalacija, što su prepoznale i naše stranke u Njemačkoj, Belgiji, Nizozemskoj i Italiji.
-                            Ovi projekti potvrđuju našu stručnost, pouzdanost, produktivnost i konkurentnost.</p>
-                        <svg viewBox="0 0 24 24" class="icons-mamont-white">
-                            <path :d="mdiHomeLightningBoltOutline   " />
-                        </svg>
-                        <div class="project-title title title2">
-                            <h2 class="box-header border-bottom mt-2">Posvećenost!</h2>
-                        </div>
-                        <p>Kao firma koja je maksimalno posvećena rokovima i  poštovanju dogovora sa klijentima i partnerima, naš tim stručnih ljudi kao prioritet na prvo mjesto  stavlja bezbijednost, profesionalnost i posvećenost</p>
-                        <svg viewBox="0 0 24 24" class="icons-mamont-white">
-                            <path :d="mdiHomeLightningBoltOutline   " />
-                        </svg>
-                        <div class="project-title title title2">
-                            <h2 class="box-header border-bottom mt-2">Iskustvo i zanje!</h2>
-                        </div>
-                        <p>Naš tim je sastavljen od velikog broja vrhunskih stručnjaka sa dugogodišnjim iskustvom u oblasti električne energije.</p>
+                        <p>{{ t('about_us.firma_sa_iskustvom')  }}.</p>
                     </div>
-                    <div class="col-md-6 who-img"><img class="img-full" :src="image3" style="width: 568px; height: 813px" alt=""></div>
-
+                    <div class="col-md-6 who-img"><img class="img-full" src="/assets/images/mamont_images/about_us.webp" style="width: auto; height: 352px" alt=""></div>
                 </div>
             </div>
         </section>
     </div>
+    <div class="container d-block d-md-flex">
+        <div class="col-lg-6">
+            <img src="/assets/images/about_us_images/about_us_animation.jpg" style="max-height: 600px; max-width: 700px;" alt="">
+        </div>
+        <div class="col-lg-6 our-mission">
+            <div class="project-title title title2">
+                <h2 class="mt-2 custom-border">{{ t('about_us.misija')  }}</h2>
+            </div>
+            <h5>{{ t('about_us.nasa_misija')  }}</h5>
+             <h5>{{ t('about_us.strpljiv_pristup')  }}</h5>
+        </div>
+    </div>
 </template>
 
 <script>
-import { mdiLightbulbOn10, mdiHomeLightningBoltOutline    } from '@mdi/js';
+import { mdiLightbulbOn10, mdiHomeLightningBoltOutline, mdiHandshakeOutline, mdiAccountHardHatOutline   } from '@mdi/js';
+import { useI18n } from 'vue-i18n';
 export default {
     name: "AboutUs",
     data () {
         return {
-            image3: this.$img('image3'),
-            about_us: this.$img('aboutUsImg'),
+            aboutUsImg: this.$img('aboutUsImg'),
+            aboutUsAnimation: this.$img('aboutUsAnimation'),
             mdiLightbulbOn10,
             mdiHomeLightningBoltOutline,
+            mdiHandshakeOutline,
+            mdiAccountHardHatOutline
         }
+    },
+    setup() {
+        const { t } = useI18n();
+        return { t };
     },
 }
 </script>

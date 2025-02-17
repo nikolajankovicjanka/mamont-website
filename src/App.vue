@@ -19,7 +19,7 @@ export default {
     components: {FooterHomePage, NavBar},
     data () {
       return {
-          mamontLogo: this.$img('mamontLogo'),
+          mamontLogo: '/assets/test_images/mamont-logo.png',
       }
     },
     setup() {
