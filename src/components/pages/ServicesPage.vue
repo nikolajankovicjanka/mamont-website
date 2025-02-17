@@ -15,7 +15,7 @@
                             <div class="news-post">
                                 <div class="img-cap-effect">
                                     <div class="img-box">
-                                        <img :src="imageHomepage" alt="Awesome Image">
+                                        <img src="/assets/images/mamont_images/mamont14.jpg" alt="Awesome Image">
                                         <div class="img-caption">
                                             <div class="box-holder"></div>
                                         </div>
@@ -53,7 +53,7 @@
                             <div class="news-post">
                                 <div class="img-cap-effect">
                                     <div class="img-box">
-                                        <img :src="imageHomepage" alt="Awesome Image">
+                                        <img src="/assets/images/mamont_images/mamont14.jpg" alt="Awesome Image">
                                         <div class="img-caption">
                                             <div class="box-holder"></div>
                                         </div>
@@ -81,7 +81,6 @@ export default {
     data () {
         return {
             mdiLightbulbOn10,
-            imageHomepage: this.$img('image1'),
         }
     },
     setup() {
