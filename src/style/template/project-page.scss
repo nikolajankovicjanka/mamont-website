@@ -1,0 +1,17 @@
+.slide-image {
+    width: 100%; /* Slika će popuniti širinu roditeljskog kontejnera */
+    max-height: 800px; /* Maksimalna visina slike */
+    display: block;
+    margin: 0 auto;
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

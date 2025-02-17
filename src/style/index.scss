@@ -1,6 +1,7 @@
 
-@import "template/header";
-@import "template/homepage";
-@import 'template/footer';
+@use "template/header";
+@use "template/homepage";
+@use 'template/footer';
 
-@import 'template/about-us';
+@use 'template/about-us';
+@use'template/project-page';
