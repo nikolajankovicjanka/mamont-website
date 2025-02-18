@@ -66,12 +66,24 @@
     </div>
 
     <div class="prioriteti-section">
-        <div class="container-fluid d-flex p-0">
+        <div class="container-fluid d-block d-md-flex p-0">
             <div class="col-lg-7">
                 <img :src="homepageWorker" alt="Prioriteti slika">
             </div>
-            <div class="col-lg-5 mt-5">
+            <div class="col-lg-5 d-none d-md-flex mt-5">
                 <h5>Verujemo da je svaki projekat jedinstven, zato prilagođavamo naše usluge specifičnim potrebama klijenata.</h5>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid bg-light-subtle mt-5 mb-5">
+        <div class="d-block d-md-flex justify-content-center">
+            <div class="col-lg-6">
+                <h1 class="mamont-team-title">MAMONT TIM U AKCIJI</h1>
+                <h5 class="mamont-team-text">Za nas ne postoji ne riješiv problem.</h5>
+            </div>
+            <div  class="col-lg-6">
+                <img src="/assets/images/mamont_images/mamont-team1.jpg" class="team-img" alt="Prioriteti slika">
             </div>
         </div>
     </div>
@@ -86,7 +98,7 @@
             <div class="row">
                 <div class="textwidget">
                     <div class="logo-panel">
-                        <div class="row">
+                        <div class="row d-block d-md-flex">
                             <div class="col"><img :src="partner1" alt="Client" height="98" width="208"></div>
                             <div class="col"><img :src="partner2" alt="Client" height="98" width="208"></div>
                             <div class="col"><img :src="partner3" alt="Client" height="98" width="208"></div>
