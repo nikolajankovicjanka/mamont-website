@@ -19,7 +19,7 @@
                         </div>
                         <p>{{ t('about_us.firma_sa_iskustvom')  }}.</p>
                     </div>
-                    <div class="col-md-6 who-img"><img class="img-full" src="/assets/images/mamont_images/about_us.webp" style="width: auto; height: 352px" alt=""></div>
+                    <div class="col-md-6 who-img"><img class="img-full" src="/assets/images/mamont_images/mamont-team2.jpg" style="width: auto; height: 400px" alt=""></div>
                 </div>
             </div>
         </section>

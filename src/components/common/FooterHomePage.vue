@@ -5,9 +5,10 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="footer-widget">
-                            <h2 class="text-white border-bottom">{{ t('common.home') }}</h2> <!-- Koristite t() ovdje -->
-                            <p>Lorem ipsum dolor sit amet, consectetur adipi sicing elit, sed do eiusmod
-                                tempor incididunt ut labore et dolore magna.</p>
+                            <h2 class="text-white border-bottom">{{ t('homepage.zasto_mamont') }}</h2> <!-- Koristite t() ovdje -->
+                            <p>Profesionalnost</p>
+                            <p>Sigurnost</p>
+                            <p>Stručnost</p>
                         </div>
                     </div>
                     <div class="col-md-4 color-white">

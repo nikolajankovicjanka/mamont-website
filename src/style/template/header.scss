@@ -14,11 +14,8 @@
         border-bottom: 1px solid #286eab;
     }
 }
-
-
-/* Osnovni stil za navbar */
 .fixed-navbar {
-    position: absolute;
+    position: relative;
     top: 30px;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -84,7 +81,7 @@
     padding: 57px 0px;
 }
 .who-img{
-    overflow: visible;
+    overflow: hidden;
     padding-left: 65px;
 }
 .img-full{
