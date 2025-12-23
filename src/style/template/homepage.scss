@@ -125,8 +125,8 @@
 
 .back-to-top {
     position: fixed;
-    bottom: 60px;
-    right: 70px;
+    bottom: 40px;
+    right: 15px;
     width: 60px;
     height: 60px;
     background-color: #286eab;
@@ -176,9 +176,9 @@
     color:  #286eab;
     font-size: 2rem;
     font-weight: bold;
-    text-shadow: 2px 2px 4px rgba(241, 237, 237, 0.7); /* Senka za tekst */
-    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparentni bijeli background */
-    padding: 20px; /* Dodajte prostor oko teksta */
+    text-shadow: 2px 2px 4px rgba(241, 237, 237, 0.7);
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 20px;
 }
 
 .counter-section {
@@ -364,14 +364,21 @@
     height: 500px;
     overflow: hidden;
 }
+@media (max-width: 768px) { /* Podešavanje za mobilne uređaje */
+    .prioriteti-section img {
+        max-width: 100%; /* Ograničava širinu slike na širinu containera */
+        height: auto; /* Održava proporcije slike */
+        top: -60px; /* Prilagođava poziciju za manje ekrane */
+    }
+}
 
 .prioriteti-section h5 {
     font-size: 2rem;
     font-weight: bold;
     text-align: start;
-    background: linear-gradient(45deg, #ffffff, #f8e3c4); /* Gradient bijele i svijetle boje */
-    -webkit-background-clip: text; /* Primjenjuje gradient na tekst */
-    -webkit-text-fill-color: transparent; /* Čini tekst providnim */
+    background: linear-gradient(45deg, #ffffff, #f8e3c4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .team-img {
