@@ -25,7 +25,10 @@ export default {
         visokokvalifikovani_radnici: 'Hochqualifizierte Mitarbeiter',
         klijenti_od_povjerenja: 'Vertrauenswürdige Kunden',
         partneri: 'UNSERE PARTNER',
-        sa_zadovoljstvom: 'Wir freuen uns, einige unserer treuen Partner und Kunden vorzustellen'
+        sa_zadovoljstvom: 'Wir freuen uns, einige unserer treuen Partner und Kunden vorzustellen',
+        svaki_projekat: 'Wir glauben, dass jedes Projekt einzigartig ist, deshalb passen wir unsere Dienstleistungen an die spezifischen Bedürfnisse unserer Kunden an.',
+        mamont_tim_u_akciji: 'MAMONT TEAM IN AKTION',
+        za_nas: 'Für uns gibt es kein unlösbares Problem.'
     },
     about_us: {
         mi_smo_kompanija_mamont: 'Wir sind MAMONT d.o.o., ein Synonym für Qualität, Zuverlässigkeit und Innovation im Bereich der Elektroinstallationen',
@@ -49,5 +52,9 @@ export default {
     projects: {
         nasi_projekti: 'Unsere Projekte',
         nasa_firma: 'Unser Unternehmen ist auf dem mitteleuropäischen Markt präsent und bietet eine Vielzahl von Dienstleistungen in den Bereichen Installation, Montage und viele andere elektrische Energiedienstleistungen an.'
+    },
+    tim: {
+        stranica_u_pripremi: 'Die Seite ist in Vorbereitung',
+        molimo_vas: 'Bitte schauen Sie später noch einmal vorbei. Ihr MAMONT'
     }
 };

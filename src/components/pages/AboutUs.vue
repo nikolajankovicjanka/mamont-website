@@ -25,15 +25,15 @@
         </section>
     </div>
     <div class="container d-block d-md-flex">
-        <div class="col-lg-6">
-            <img src="/assets/images/about_us_images/about_us_animation.jpg" style="max-height: 600px; max-width: 700px;" alt="">
+        <div class="col-12 col-lg-6">
+            <img src="/assets/images/about_us_images/about_us_animation.jpg" class="img-responsive" alt="">
         </div>
-        <div class="col-lg-6 our-mission">
+        <div class="col-12 col-lg-6 our-mission mt-3 mt-lg-0">
             <div class="project-title title title2">
                 <h2 class="mt-2 custom-border">{{ t('about_us.misija')  }}</h2>
             </div>
             <h5>{{ t('about_us.nasa_misija')  }}</h5>
-             <h5>{{ t('about_us.strpljiv_pristup')  }}</h5>
+            <h5>{{ t('about_us.strpljiv_pristup')  }}</h5>
         </div>
     </div>
 </template>

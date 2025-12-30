@@ -364,6 +364,21 @@
     height: 500px;
     overflow: hidden;
 }
+@media (max-width: 767px) {
+    .prioriteti-section {
+        overflow: hidden; /* KONTEJNER reže višak */
+    }
+    
+    .prioriteti-section img {
+        position: static;     /* uklanja top hack */
+        width: 100%;
+        max-width: 100%;
+        height: auto;         /* skaluje pravilno */
+        object-fit: contain;  /* ili cover ako želiš */
+        display: block;
+    }
+    
+}
 
 .prioriteti-section h5 {
     font-size: 2rem;
@@ -372,6 +387,11 @@
     background: linear-gradient(45deg, #ffffff, #f8e3c4); /* Gradient bijele i svijetle boje */
     -webkit-background-clip: text; /* Primjenjuje gradient na tekst */
     -webkit-text-fill-color: transparent; /* Čini tekst providnim */
+    
+    @media (max-width: 767px) {
+        font-size: 1rem;
+        padding: 1.25rem;
+    }
 }
 
 .team-img {

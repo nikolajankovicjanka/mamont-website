@@ -66,12 +66,12 @@
     </div>
 
     <div class="prioriteti-section">
-        <div class="container-fluid d-block d-md-flex p-0">
+        <div class="container-fluid  d-flex p-0">
             <div class="col-lg-7">
                 <img :src="homepageWorker" alt="Prioriteti slika">
             </div>
-            <div class="col-lg-5 d-none d-md-flex mt-5">
-                <h5>Verujemo da je svaki projekat jedinstven, zato prilagođavamo naše usluge specifičnim potrebama klijenata.</h5>
+            <div class="col-md-5 d-flex mt-3 mt-md-5">
+                <h5>{{ $t('homepage.svaki_projekat') }}</h5>
             </div>
         </div>
     </div>
@@ -79,8 +79,8 @@
     <div class="container-fluid bg-light-subtle mt-5 mb-5">
         <div class="d-block d-md-flex justify-content-center">
             <div class="col-lg-6">
-                <h1 class="mamont-team-title">MAMONT TIM U AKCIJI</h1>
-                <h5 class="mamont-team-text">Za nas ne postoji ne riješiv problem.</h5>
+                <h1 class="mamont-team-title">{{ $t('homepage.mamont_tim_u_akciji') }}</h1>
+                <h5 class="mamont-team-text">{{ $t('homepage.za_nas') }}</h5>
             </div>
             <div  class="col-lg-6">
                 <img src="/assets/images/mamont_images/mamont-team1.jpg" class="team-img" alt="Prioriteti slika">
@@ -205,7 +205,6 @@ export default {
     },
 
     methods: {
-        // Prikaz lightbox-a
         showLightbox(index) {
             this.index = index;
             this.visible = true;
@@ -215,5 +214,4 @@ export default {
 </script>
 
 <style scoped>
-/* Dodajte stilove po potrebi */
 </style>
