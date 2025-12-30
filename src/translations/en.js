@@ -25,7 +25,10 @@ export default {
         visokokvalifikovani_radnici: 'Highly Qualified Workers',
         klijenti_od_povjerenja: 'Trusted Clients',
         partneri: 'OUR PARTNERS',
-        sa_zadovoljstvom: 'We are pleased to present some of our loyal partners and clients'
+        sa_zadovoljstvom: 'We are pleased to present some of our loyal partners and clients',
+        svaki_projekat: 'We believe that every project is unique, which is why we tailor our services to the specific needs of our clients.',
+        mamont_tim_u_akciji: 'MAMONT TEAM IN ACTION',
+        za_nas: 'For us, there is no unsolved problem.'
     },
     about_us: {
         mi_smo_kompanija_mamont: 'We are MAMONT d.o.o., a synonym for quality, reliability, and innovation in the field of electrical installations',
@@ -49,5 +52,10 @@ export default {
     projects: {
         nasi_projekti: 'Our Projects',
         nasa_firma: 'Our company is present in the Central European market and is engaged in a large number of services in the field of installation, assembly, and many other electrical energy services.'
+
+    },
+    tim: {
+        stranica_u_pripremi: 'The page is under construction',
+        molimo_vas: 'Please check back later. Your MAMONT'
     }
 };
