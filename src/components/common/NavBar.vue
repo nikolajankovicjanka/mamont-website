@@ -1,5 +1,5 @@
 <template>
-    <b-navbar toggleable="lg" type="dark" variant="transparent" class="fixed-navbar" :class="{ 'sticky': isSticky }" ref="navbar">
+    <b-navbar toggleable="lg" type="dark" class="fixed-navbar" :class="{ 'sticky': isSticky }" ref="navbar">
         <b-navbar-brand style="padding-left: 3rem" @click="navigateTo('/')">
             <img src="/assets/images/test_images/mamont-logo.png" style="max-width: 200px; max-height: 50px" alt="Logo" class="navbar-logo" />
         </b-navbar-brand>
