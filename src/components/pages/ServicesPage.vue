@@ -1,6 +1,6 @@
 <template>
     <section class="news-section news-section-home mt-4">
-        <div class="container mb-5">
+        <div class="container-fluid mb-4" style="margin-top: 80px">
             <svg viewBox="0 0 24 24" class="icons-mamont">
                 <path :d="mdiLightbulbOn10" />
             </svg>
