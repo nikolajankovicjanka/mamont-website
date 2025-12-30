@@ -1,5 +1,5 @@
 <template>
-    <div class="container-fluid mb-4">
+    <div class="container-fluid mb-4" style="margin-top: 80px">
         <swiper
                 class="swiper-homepage"
                 :modules="modules"
@@ -15,7 +15,7 @@
             <swiper-slide class="swiper-slide-homepage" v-for="(image, index) in images" :key="index">
                 <img :src="image" :alt="'Slide ' + (index + 1)" class="slide-image-homepage" />
                 <!-- Dodajte slogane za svaki slajd -->
-                <div class="slide-text">
+                <div class="slide-text d-none d-md-block">
                     <h2>{{ slogans[index] }}</h2>
                 </div>
             </swiper-slide>

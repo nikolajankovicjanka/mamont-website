@@ -1,5 +1,5 @@
 <template>
-    <div  class="container-fluid mt-4 mb-5">
+    <div class="container-fluid mb-5" style="margin-top: 80px">
         <div>
             <svg viewBox="0 0 24 24" class="icons-mamont">
                 <path :d="mdiHomeLightningBoltOutline  " />

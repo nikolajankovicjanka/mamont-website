@@ -1,7 +1,9 @@
 <template>
-    <div class="coming-soon">
-        <h1>{{ $t('tim.stranica_u_pripremi') }}</h1>
-        <h5>{{ $t('tim.molimo_vas') }}</h5>
+    <div class="container-fluid mb-4" style="margin-top: 80px">
+        <div class="coming-soon">
+            <h1>{{ $t('tim.stranica_u_pripremi') }}</h1>
+            <h5>{{ $t('tim.molimo_vas') }}</h5>
+        </div>
     </div>
 </template>
 
