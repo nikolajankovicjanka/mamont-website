@@ -1,0 +1,649 @@
+$mamont-blue: #286eab;
+$mamont-blue-dark: #123a5a;
+$mamont-blue-deep: #061827;
+$mamont-blue-soft: #eaf3fb;
+$mamont-text: #142433;
+$mamont-muted: #667789;
+$mamont-border: rgba(20, 36, 51, 0.1);
+$mamont-white: #ffffff;
+
+.mamont-career {
+  background: #f7fafc;
+  color: $mamont-text;
+  overflow: hidden;
+}
+
+/* HERO */
+
+.mamont-career-hero {
+  position: relative;
+  min-height: 620px;
+  display: flex;
+  align-items: center;
+  background: $mamont-blue-deep;
+  color: $mamont-white;
+  overflow: hidden;
+}
+
+.mamont-career-hero__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1.03);
+}
+
+.mamont-career-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background:
+          linear-gradient(90deg, rgba(7, 24, 39, 0.96) 0%, rgba(7, 24, 39, 0.76) 45%, rgba(7, 24, 39, 0.16) 100%),
+          radial-gradient(circle at 15% 0%, rgba(40, 110, 171, 0.38), transparent 35%);
+}
+
+.mamont-career-hero__content {
+  position: relative;
+  z-index: 2;
+  max-width: 720px;
+  padding: 5rem 0;
+}
+
+.mamont-career__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  color: #8ec5f3;
+  font-size: 0.76rem;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 0.85rem;
+}
+
+.mamont-career-hero__content h1 {
+  max-width: 760px;
+  color: $mamont-white;
+  font-size: clamp(2.5rem, 5vw, 4.9rem);
+  line-height: 1.02;
+  font-weight: 950;
+  letter-spacing: -0.055em;
+  margin-bottom: 1.1rem;
+}
+
+.mamont-career-hero__content p {
+  max-width: 560px;
+  color: rgba(255, 255, 255, 0.84);
+  font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+  line-height: 1.7;
+  margin-bottom: 1.75rem;
+}
+
+/* BUTTONS */
+
+.mamont-career-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  outline: 0;
+  border-radius: 999px;
+  padding: 0.9rem 1.35rem;
+  font-size: 0.92rem;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+          transform 0.22s ease,
+          box-shadow 0.22s ease,
+          background 0.22s ease,
+          opacity 0.22s ease;
+}
+
+.mamont-career-btn--primary,
+.mamont-career-btn--submit {
+  color: $mamont-white;
+  background: linear-gradient(135deg, $mamont-blue 0%, #1d6098 100%);
+  box-shadow: 0 18px 35px rgba(40, 110, 171, 0.28);
+}
+
+.mamont-career-btn--primary:hover,
+.mamont-career-btn--submit:hover {
+  color: $mamont-white;
+  transform: translateY(-2px);
+  box-shadow: 0 24px 45px rgba(40, 110, 171, 0.34);
+}
+
+.mamont-career-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* INTRO */
+
+.mamont-career-intro {
+  padding: clamp(4rem, 8vw, 7rem) 0;
+}
+
+.mamont-career-intro__grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: clamp(2.5rem, 5vw, 5rem);
+  align-items: center;
+}
+
+.mamont-career-intro__content .mamont-career__eyebrow,
+.mamont-career-form-section__content .mamont-career__eyebrow {
+  color: $mamont-blue;
+}
+
+.mamont-career-intro__content h2,
+.mamont-career-form-section__content h2 {
+  color: $mamont-blue-dark;
+  font-size: clamp(2.15rem, 4vw, 3.65rem);
+  line-height: 1.04;
+  font-weight: 950;
+  letter-spacing: -0.045em;
+  margin-bottom: 1rem;
+}
+
+.mamont-career-intro__content p,
+.mamont-career-form-section__content p {
+  color: $mamont-muted;
+  font-size: 1.04rem;
+  line-height: 1.8;
+}
+
+.mamont-career-intro__cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.mamont-career-intro__cards article {
+  min-height: 250px;
+  padding: 1.5rem;
+  border-radius: 28px;
+  background: $mamont-white;
+  border: 1px solid $mamont-border;
+  box-shadow: 0 18px 45px rgba(18, 58, 90, 0.07);
+}
+
+.mamont-career-intro__cards strong {
+  display: inline-flex;
+  color: $mamont-blue;
+  font-size: 0.82rem;
+  font-weight: 950;
+  letter-spacing: 0.16em;
+  margin-bottom: 1.4rem;
+}
+
+.mamont-career-intro__cards h3 {
+  color: $mamont-blue-dark;
+  font-size: 1.2rem;
+  font-weight: 950;
+  margin-bottom: 0.75rem;
+}
+
+.mamont-career-intro__cards p {
+  color: $mamont-muted;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* FORM SECTION */
+
+.mamont-career-form-section {
+  padding: clamp(4rem, 8vw, 7rem) 0;
+  background:
+          radial-gradient(circle at top left, rgba(40, 110, 171, 0.12), transparent 32%),
+          $mamont-white;
+}
+
+.mamont-career-form-section__grid {
+  display: grid;
+  grid-template-columns: 0.72fr 1.28fr;
+  gap: clamp(2.5rem, 5vw, 5rem);
+  align-items: start;
+}
+
+.mamont-career-form-section__content {
+  position: sticky;
+  top: 110px;
+}
+
+.mamont-career-form-section__note {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-radius: 22px;
+  background: #f7fafc;
+  border: 1px solid $mamont-border;
+}
+
+.mamont-career-form-section__note strong {
+  display: block;
+  color: $mamont-blue-dark;
+  font-weight: 950;
+  margin-bottom: 0.25rem;
+}
+
+.mamont-career-form-section__note span {
+  display: block;
+  color: $mamont-muted;
+  line-height: 1.55;
+}
+
+/* FORM */
+
+.mamont-career-form {
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border-radius: 34px;
+  background: #f7fafc;
+  border: 1px solid $mamont-border;
+  box-shadow: 0 28px 80px rgba(18, 58, 90, 0.12);
+}
+
+.mamont-career-form__botcheck {
+  display: none;
+}
+
+.mamont-career-form__row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.mamont-career-form label {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.mamont-career-form label > span {
+  display: block;
+  color: $mamont-blue-dark;
+  font-size: 1rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.45rem;
+}
+
+.mamont-career-form input,
+.mamont-career-form select,
+.mamont-career-form textarea {
+  width: 100%;
+  border: 1px solid rgba(20, 36, 51, 0.12);
+  outline: 0;
+  border-radius: 18px;
+  background: $mamont-white;
+  color: $mamont-text;
+  padding: 0.95rem 1rem;
+  font-size: 0.96rem;
+  transition:
+          border-color 0.2s ease,
+          box-shadow 0.2s ease,
+          background 0.2s ease;
+}
+
+.mamont-career-form textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+.mamont-career-form input:focus,
+.mamont-career-form select:focus,
+.mamont-career-form textarea:focus {
+  border-color: rgba(40, 110, 171, 0.5);
+  box-shadow: 0 0 0 4px rgba(40, 110, 171, 0.12);
+}
+
+.mamont-career-form__checkbox {
+  min-height: 55px;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.85rem 1rem;
+  border-radius: 18px;
+  background: $mamont-white;
+  border: 1px solid rgba(20, 36, 51, 0.12);
+}
+
+.mamont-career-form__checkbox input,
+.mamont-career-form__privacy input {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
+  accent-color: $mamont-blue;
+}
+
+.mamont-career-form__checkbox label,
+.mamont-career-form__privacy label {
+  margin: 0;
+  color: $mamont-muted;
+  font-size: 0.94rem;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.mamont-career-form__file input {
+  display: none;
+}
+
+.mamont-career-form__file-box {
+  padding: 1rem;
+  border-radius: 22px;
+  background: $mamont-white;
+  border: 1px dashed rgba(40, 110, 171, 0.42);
+  cursor: pointer;
+  transition:
+          border-color 0.2s ease,
+          background 0.2s ease,
+          box-shadow 0.2s ease;
+}
+
+.mamont-career-form__file-box:hover {
+  background: #fafdff;
+  border-color: $mamont-blue;
+  box-shadow: 0 14px 34px rgba(18, 58, 90, 0.07);
+}
+
+.mamont-career-form__file-box strong {
+  display: block;
+  color: $mamont-blue-dark;
+  font-size: 0.96rem;
+  margin-bottom: 0.25rem;
+}
+
+.mamont-career-form__file-box small {
+  display: block;
+  color: $mamont-muted;
+  font-size: 0.82rem;
+}
+
+.mamont-career-form__privacy {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  margin: 1rem 0 1.25rem;
+}
+
+.mamont-career-btn--submit {
+  width: 100%;
+}
+
+.mamont-career-form__message {
+  margin: 1rem 0 0;
+  padding: 0.95rem 1rem;
+  border-radius: 18px;
+  font-weight: 800;
+  line-height: 1.5;
+}
+
+.mamont-career-form__message--success {
+  color: #146c43;
+  background: #d1e7dd;
+}
+
+.mamont-career-form__message--error {
+  color: #842029;
+  background: #f8d7da;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1199px) {
+  .mamont-career-intro__cards {
+    grid-template-columns: 1fr;
+  }
+
+  .mamont-career-intro__cards article {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 991px) {
+  .mamont-career-hero {
+    min-height: 560px;
+  }
+
+  .mamont-career-intro__grid,
+  .mamont-career-form-section__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mamont-career-form-section__content {
+    position: static;
+  }
+
+  .mamont-career-intro__cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .mamont-career-hero {
+    min-height: 520px;
+    text-align: center;
+  }
+
+  .mamont-career-hero__content {
+    padding: 4rem 0;
+  }
+
+  .mamont-career-hero__content h1 {
+    font-size: clamp(2rem, 9vw, 3rem);
+  }
+
+  .mamont-career-hero__content p {
+    font-size: 0.96rem;
+  }
+
+  .mamont-career-intro,
+  .mamont-career-form-section {
+    padding: 3.5rem 0;
+  }
+
+  .mamont-career-intro__cards,
+  .mamont-career-form__row {
+    grid-template-columns: 1fr;
+  }
+
+  .mamont-career-form {
+    border-radius: 26px;
+  }
+}
+
+/* CAREER FORM - STRONGER PROFESSIONAL CONTRAST */
+
+.mamont-career-form-section {
+  background:
+          radial-gradient(circle at top left, rgba(40, 110, 171, 0.12), transparent 32%),
+          linear-gradient(135deg, #eef5fb 0%, #f7fafc 48%, #ffffff 100%);
+}
+
+.mamont-career-form-section__grid {
+  align-items: center;
+}
+
+.mamont-career-form-section__content {
+  text-align: center;
+}
+
+.mamont-career-form-section__content .mamont-career__eyebrow {
+  justify-content: center;
+  color: $mamont-blue;
+}
+
+.mamont-career-form-section__content h2 {
+  max-width: 430px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mamont-career-form-section__content p {
+  max-width: 470px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mamont-career-form-section__note {
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+  background: #ffffff;
+  border: 1px solid rgba(40, 110, 171, 0.16);
+  box-shadow: 0 14px 35px rgba(18, 58, 90, 0.07);
+}
+
+/* FORM CARD */
+
+.mamont-career-form {
+  position: relative;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid rgba(40, 110, 171, 0.18);
+  box-shadow:
+          0 32px 90px rgba(18, 58, 90, 0.16),
+          0 0 0 1px rgba(255, 255, 255, 0.9) inset;
+}
+
+.mamont-career-form::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 7px;
+  background: linear-gradient(135deg, $mamont-blue 0%, #1b5e96 100%);
+}
+
+.mamont-career-form label {
+  text-align: left;
+}
+
+.mamont-career-form label > span {
+  color: $mamont-blue-dark;
+  font-size: 1rem;
+  font-weight: 950;
+  letter-spacing: 0.06em;
+}
+
+/* INPUTS */
+
+.mamont-career-form input,
+.mamont-career-form select,
+.mamont-career-form textarea {
+  background: #f9fcff;
+  border: 1px solid rgba(18, 58, 90, 0.16);
+  color: $mamont-text;
+  box-shadow: 0 8px 20px rgba(18, 58, 90, 0.035);
+}
+
+.mamont-career-form input::placeholder,
+.mamont-career-form textarea::placeholder {
+  color: rgba(20, 36, 51, 0.48);
+}
+
+.mamont-career-form input:hover,
+.mamont-career-form select:hover,
+.mamont-career-form textarea:hover {
+  border-color: rgba(40, 110, 171, 0.32);
+  background: #ffffff;
+}
+
+.mamont-career-form input:focus,
+.mamont-career-form select:focus,
+.mamont-career-form textarea:focus {
+  background: #ffffff;
+  border-color: $mamont-blue;
+  box-shadow:
+          0 0 0 4px rgba(40, 110, 171, 0.12),
+          0 12px 28px rgba(18, 58, 90, 0.08);
+}
+
+/* CHECKBOX EU */
+
+.mamont-career-form__checkbox {
+  background: #f9fcff;
+  border: 1px solid rgba(18, 58, 90, 0.16);
+}
+
+.mamont-career-form__checkbox:hover {
+  background: #ffffff;
+  border-color: rgba(40, 110, 171, 0.32);
+}
+
+.mamont-career-form__checkbox label {
+  color: $mamont-blue-dark;
+  font-weight: 700;
+}
+
+/* FILE UPLOAD */
+
+.mamont-career-form__file-box {
+  background:
+          linear-gradient(135deg, rgba(40, 110, 171, 0.055) 0%, rgba(255, 255, 255, 0.95) 100%);
+  border: 2px dashed rgba(40, 110, 171, 0.34);
+  text-align: center;
+  padding: 1.3rem 1rem;
+}
+
+.mamont-career-form__file-box:hover {
+  background: #ffffff;
+  border-color: $mamont-blue;
+  box-shadow: 0 18px 40px rgba(18, 58, 90, 0.1);
+}
+
+.mamont-career-form__file-box strong {
+  color: $mamont-blue-dark;
+  font-weight: 950;
+}
+
+.mamont-career-form__file-box small {
+  color: $mamont-muted;
+}
+
+/* PRIVACY */
+
+.mamont-career-form__privacy {
+  padding: 0.9rem 1rem;
+  border-radius: 18px;
+  background: #f9fcff;
+  border: 1px solid rgba(18, 58, 90, 0.12);
+}
+
+.mamont-career-form__privacy label {
+  color: $mamont-blue-dark;
+  font-weight: 650;
+}
+
+/* SUBMIT */
+
+.mamont-career-btn--submit {
+  min-height: 54px;
+  font-size: 0.98rem;
+  box-shadow: 0 18px 38px rgba(40, 110, 171, 0.28);
+}
+
+.mamont-career-btn--submit:hover {
+  box-shadow: 0 24px 50px rgba(40, 110, 171, 0.36);
+}
+
+/* MOBILE */
+
+@media (max-width: 991px) {
+  .mamont-career-form-section__content {
+    text-align: left;
+  }
+
+  .mamont-career-form-section__content .mamont-career__eyebrow {
+    justify-content: flex-start;
+  }
+
+  .mamont-career-form-section__content h2,
+  .mamont-career-form-section__content p,
+  .mamont-career-form-section__note {
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}

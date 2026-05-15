@@ -1,0 +1,449 @@
+$mamont-blue: #286eab;
+$mamont-blue-dark: #123a5a;
+$mamont-blue-deep: #061827;
+$mamont-blue-soft: #eaf3fb;
+$mamont-text: #142433;
+$mamont-muted: #667789;
+$mamont-border: rgba(20, 36, 51, 0.1);
+$mamont-white: #ffffff;
+
+.mamont-projects-page {
+  background: #f7fafc;
+  color: $mamont-text;
+  overflow: hidden;
+}
+
+/* HERO */
+
+.mamont-projects-hero {
+  position: relative;
+  min-height: 540px;
+  display: flex;
+  align-items: center;
+  background: $mamont-blue-deep;
+  color: $mamont-white;
+  overflow: hidden;
+}
+
+.mamont-projects-hero__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1.04);
+}
+
+.mamont-projects-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background:
+          linear-gradient(90deg, rgba(7, 24, 39, 0.96) 0%, rgba(7, 24, 39, 0.72) 48%, rgba(7, 24, 39, 0.22) 100%),
+          radial-gradient(circle at 15% 0%, rgba(40, 110, 171, 0.35), transparent 35%);
+}
+
+.mamont-projects-hero__content {
+  position: relative;
+  z-index: 2;
+  max-width: 760px;
+  padding: 5rem 0;
+}
+
+.mamont-projects__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  color: #8ec5f3;
+  font-size: 0.76rem;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 0.85rem;
+}
+
+.mamont-projects-hero__content h1 {
+  color: $mamont-white;
+  font-size: clamp(2.35rem, 4.7vw, 4.45rem);
+  line-height: 1.03;
+  font-weight: 950;
+  letter-spacing: -0.05em;
+  margin-bottom: 1.15rem;
+}
+
+.mamont-projects-hero__content p {
+  max-width: 620px;
+  color: rgba(255, 255, 255, 0.84);
+  font-size: clamp(1rem, 1.25vw, 1.12rem);
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* GALLERY */
+
+.mamont-projects-gallery {
+  padding: clamp(4rem, 8vw, 7rem) 0;
+}
+
+.mamont-projects-gallery__heading {
+  max-width: 760px;
+  margin: 0 auto 3rem;
+  text-align: center;
+}
+
+.mamont-projects-gallery__heading .mamont-projects__eyebrow {
+  color: $mamont-blue;
+}
+
+.mamont-projects-gallery__heading h2 {
+  color: $mamont-blue-dark;
+  font-size: clamp(2.1rem, 4vw, 3.7rem);
+  line-height: 1.04;
+  font-weight: 950;
+  letter-spacing: -0.045em;
+  margin-bottom: 1rem;
+}
+
+.mamont-projects-gallery__heading p {
+  color: $mamont-muted;
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+/* SLIDER LAYOUT */
+
+.mamont-projects-slider {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) 0.65fr;
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.mamont-projects-slider__swiper {
+  width: 100%;
+  min-width: 0;
+  border-radius: 34px;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(18, 58, 90, 0.16);
+  background: $mamont-blue-dark;
+}
+
+.mamont-projects-slider__slide {
+  height: auto;
+}
+
+.mamont-project-card {
+  position: relative;
+  min-height: 620px;
+  overflow: hidden;
+  background: $mamont-blue-dark;
+}
+
+.mamont-project-card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.mamont-project-card:hover img {
+  transform: scale(1.04);
+}
+
+.mamont-project-card__overlay {
+  position: absolute;
+  inset: 0;
+  background:
+          linear-gradient(180deg, rgba(7, 24, 39, 0.05) 0%, rgba(7, 24, 39, 0.78) 100%),
+          linear-gradient(90deg, rgba(7, 24, 39, 0.68) 0%, rgba(7, 24, 39, 0.08) 100%);
+}
+
+.mamont-project-card__content {
+  position: absolute;
+  left: 2rem;
+  right: 2rem;
+  bottom: 2rem;
+  z-index: 2;
+  color: $mamont-white;
+  max-width: 620px;
+}
+
+.mamont-project-card__content > span {
+  display: inline-flex;
+  color: #8ec5f3;
+  font-size: 0.82rem;
+  font-weight: 950;
+  letter-spacing: 0.16em;
+  margin-bottom: 0.7rem;
+}
+
+.mamont-project-card__content h3 {
+  color: $mamont-white;
+  font-size: clamp(2rem, 3vw, 3rem);
+  line-height: 1.05;
+  font-weight: 950;
+  letter-spacing: -0.045em;
+  margin-bottom: 0.8rem;
+}
+
+.mamont-project-card__content p {
+  max-width: 540px;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 1rem;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* SIDE INFO */
+
+.mamont-projects-slider__info {
+  padding: 2rem;
+  border-radius: 34px;
+  background:
+          radial-gradient(circle at top left, rgba(40, 110, 171, 0.12), transparent 40%),
+          $mamont-white;
+  border: 1px solid $mamont-border;
+  box-shadow: 0 24px 70px rgba(18, 58, 90, 0.1);
+}
+
+.mamont-projects-slider__counter {
+  display: inline-flex;
+  color: $mamont-blue;
+  font-size: 0.78rem;
+  font-weight: 950;
+  letter-spacing: 0.16em;
+  margin-bottom: 1.4rem;
+}
+
+.mamont-projects-slider__info h3 {
+  color: $mamont-blue-dark;
+  font-size: clamp(1.65rem, 2.5vw, 2.6rem);
+  line-height: 1.08;
+  font-weight: 950;
+  letter-spacing: -0.045em;
+  margin-bottom: 1rem;
+}
+
+.mamont-projects-slider__info p {
+  color: $mamont-muted;
+  font-size: 1rem;
+  line-height: 1.75;
+  margin-bottom: 1.5rem;
+}
+
+.mamont-projects-slider__meta {
+  display: grid;
+  gap: 0.9rem;
+  margin-top: 1.5rem;
+}
+
+.mamont-projects-slider__meta div {
+  padding: 1.1rem;
+  border-radius: 22px;
+  background: #f7fafc;
+  border: 1px solid $mamont-border;
+}
+
+.mamont-projects-slider__meta strong {
+  display: block;
+  color: $mamont-blue;
+  font-size: 1.8rem;
+  line-height: 1;
+  font-weight: 950;
+  margin-bottom: 0.3rem;
+}
+
+.mamont-projects-slider__meta span {
+  display: block;
+  color: $mamont-blue-dark;
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* SWIPER CONTROLS */
+
+.mamont-projects-slider .swiper-button-next,
+.mamont-projects-slider .swiper-button-prev {
+  width: 54px;
+  height: 54px;
+  border-radius: 999px;
+  color: $mamont-white !important;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  transition:
+          background 0.2s ease,
+          transform 0.2s ease;
+}
+
+.mamont-projects-slider .swiper-button-next:hover,
+.mamont-projects-slider .swiper-button-prev:hover {
+  background: rgba(40, 110, 171, 0.82);
+  transform: scale(1.04);
+}
+
+.mamont-projects-slider .swiper-button-next::after,
+.mamont-projects-slider .swiper-button-prev::after {
+  font-size: 1.15rem;
+  font-weight: 900;
+}
+
+.mamont-projects-slider .swiper-pagination-bullet {
+  width: 9px;
+  height: 9px;
+  background: rgba(255, 255, 255, 0.72) !important;
+}
+
+.mamont-projects-slider .swiper-pagination-bullet-active {
+  background: $mamont-white !important;
+}
+
+/* THUMBNAILS */
+
+.mamont-projects-thumbs {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0.8rem;
+  margin-top: 1.25rem;
+}
+
+.mamont-projects-thumb {
+  position: relative;
+  height: 92px;
+  border: 0;
+  outline: 0;
+  padding: 0;
+  border-radius: 18px;
+  overflow: hidden;
+  background: $mamont-blue-dark;
+  cursor: pointer;
+  opacity: 0.62;
+  transition:
+          opacity 0.2s ease,
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
+}
+
+.mamont-projects-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mamont-projects-thumb.is-active,
+.mamont-projects-thumb:hover {
+  opacity: 1;
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px rgba(18, 58, 90, 0.18);
+}
+
+.mamont-projects-thumb.is-active::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 3px solid $mamont-blue;
+  border-radius: 18px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1199px) {
+  .mamont-project-card {
+    min-height: 560px;
+  }
+
+  .mamont-projects-thumbs {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 991px) {
+  .mamont-projects-hero {
+    min-height: 500px;
+  }
+
+  .mamont-projects-slider {
+    grid-template-columns: 1fr;
+  }
+
+  .mamont-project-card {
+    min-height: 520px;
+  }
+
+  .mamont-projects-slider__info {
+    order: -1;
+  }
+
+  .mamont-projects-slider__meta {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .mamont-projects-hero {
+    min-height: 460px;
+    text-align: center;
+  }
+
+  .mamont-projects-hero__content {
+    padding: 4rem 0;
+  }
+
+  .mamont-projects-hero__content h1 {
+    font-size: clamp(2rem, 9vw, 3rem);
+  }
+
+  .mamont-projects-hero__content p {
+    font-size: 0.96rem;
+  }
+
+  .mamont-projects-gallery {
+    padding: 3.5rem 0;
+  }
+
+  .mamont-project-card {
+    min-height: 420px;
+  }
+
+  .mamont-project-card__content {
+    left: 1.25rem;
+    right: 1.25rem;
+    bottom: 1.25rem;
+  }
+
+  .mamont-project-card__content h3 {
+    font-size: clamp(1.65rem, 7vw, 2.35rem);
+  }
+
+  .mamont-project-card__content p {
+    font-size: 0.92rem;
+  }
+
+  .mamont-projects-slider__info {
+    padding: 1.35rem;
+    border-radius: 26px;
+  }
+
+  .mamont-projects-thumbs {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.65rem;
+  }
+
+  .mamont-projects-thumb {
+    height: 74px;
+    border-radius: 14px;
+  }
+
+  .mamont-projects-thumb.is-active::after {
+    border-radius: 14px;
+  }
+
+  .mamont-projects-slider .swiper-button-next,
+  .mamont-projects-slider .swiper-button-prev {
+    width: 44px;
+    height: 44px;
+  }
+}

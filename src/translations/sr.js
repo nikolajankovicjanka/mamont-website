@@ -31,6 +31,7 @@ export default {
         za_nas: 'Za naš tim nema ne riješivog problema.'
     },
     about_us: {
+        hero_title: 'Pouzdan partner za projekte širom Evrope',
         mi_smo_kompanija_mamont: 'Mi smo kompanija MAMONT d.o.o., sinonim za kvalitet, pouzdanost i inovativnost u oblasti elektroinstalacija',
         ko_smo_mi: 'Ko smo mi',
         firma_sa_iskustvom: 'Firma sa  dugogodišnjim iskustvom i posvećenošću kvalitetu, sa sjedištem u Sloveniji, naše usluge pružamo klijentima širom Evrope, uključujući Njemačku, Belgiju, Nizozemsku i Italiju.\n' +

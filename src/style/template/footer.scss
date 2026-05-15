@@ -1,120 +1,417 @@
-footer .up-footer {
-    padding: 50px 0;
-    background-size: cover;
+$mamont-blue: #286eab;
+$mamont-blue-strong: #0b5fbc;
+$mamont-blue-dark: #0c3f7a;
+$mamont-blue-deep: #071f3b;
+$mamont-blue-light: #39aeea;
+$mamont-white: #ffffff;
+$mamont-text: #123a5a;
+$mamont-muted: rgba(255, 255, 255, 0.76);
+
+.mamont-art-footer {
     position: relative;
+    overflow: hidden;
+    color: $mamont-white;
+    background: #0b315c;
 }
-footer .up-footer .container{
+
+/* TOP AREA */
+
+.mamont-art-footer__blue-area {
+    position: relative;
+    padding: clamp(4rem, 7vw, 6rem) 0 clamp(6rem, 10vw, 8rem);
+    background:
+            radial-gradient(circle at 8% 0%, rgba(54, 178, 237, 0.34), transparent 32%),
+            linear-gradient(135deg, #0c3f7a 0%, #071f3b 100%);
+}
+
+.mamont-art-footer__blue-area::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+            linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+    background-size: 34px 34px;
+    pointer-events: none;
+}
+
+.mamont-art-footer__circle {
+    position: absolute;
+    left: -10rem;
+    top: -18rem;
+    width: 680px;
+    height: 680px;
+    border-radius: 50%;
+    background: rgba(37, 134, 214, 0.6);
+    pointer-events: none;
+}
+
+.mamont-art-footer__inner {
     position: relative;
     z-index: 2;
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(260px, 0.55fr);
+    gap: clamp(2rem, 6vw, 6rem);
+    align-items: start;
 }
-footer .up-footer:after {
-    position: absolute;
-    content: '';
-    top: 0;
-    left: 0;
+
+.mamont-art-footer__brand-block {
+    max-width: 620px;
+}
+
+.mamont-art-footer__brand {
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: $mamont-white;
+    padding: 0;
+    margin: 0 0 1.6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    cursor: pointer;
+    text-align: left;
+}
+
+.mamont-art-footer__brand span,
+.mamont-art-footer__brand strong {
+    display: block;
+    color: $mamont-white;
+    font-size: clamp(3rem, 6vw, 5.6rem);
+    line-height: 0.92;
+    font-weight: 950;
+    letter-spacing: -0.055em;
+    text-transform: uppercase;
+}
+
+.mamont-art-footer__brand strong {
+    font-size: clamp(2.35rem, 4.6vw, 4.35rem);
+}
+
+.mamont-art-footer__brand-block p {
+    max-width: 460px;
+    color: rgba(255, 255, 255, 0.86);
+    font-size: 1rem;
+    line-height: 1.7;
+    font-weight: 650;
+    margin: 0;
+}
+
+/* CONTACT CARD */
+
+.mamont-art-footer__contact-card {
     width: 100%;
-    height: 100%;
-    background: #286eab;
+    max-width: 320px;
+    justify-self: end;
+    padding: 1.5rem;
+    border-radius: 28px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    box-shadow: 0 26px 70px rgba(0, 0, 0, 0.22);
+    backdrop-filter: blur(14px);
 }
-footer .up-footer h2 {
-    color: #c5c5c5;
-    font-size: 17px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    margin: 0 0 15px;
-    font-size: 15px;
-    margin-bottom: 30px;
+
+.mamont-art-footer__contact-label {
+    display: block;
+    color: rgba(255, 255, 255, 0.68);
+    font-size: 0.75rem;
+    font-weight: 950;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 0.9rem;
+}
+
+.mamont-art-footer__contact-card a {
+    display: block;
+    color: $mamont-white;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 900;
+    line-height: 1.35;
+    padding: 0.65rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    transition:
+            color 0.2s ease,
+            transform 0.2s ease;
+}
+
+.mamont-art-footer__contact-card a:hover {
+    color: #9bd6ff;
+    transform: translateX(4px);
+}
+
+/* WHITE DIAGONAL CONTENT */
+
+.mamont-art-footer__white-band {
+    position: relative;
+    z-index: 3;
+    margin-top: -4rem;
+    background: $mamont-white;
+    color: $mamont-text;
+    clip-path: polygon(0 18%, 100% 0, 100% 100%, 0 100%);
+    isolation: isolate;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+.mamont-art-footer__white-inner {
+    position: relative;
+    min-height: 260px;
+    padding: clamp(5rem, 8vw, 7rem) 0 clamp(3rem, 5vw, 4.5rem);
+    display: grid;
+    grid-template-columns: 260px minmax(0, 1fr);
+    gap: clamp(2rem, 6vw, 6rem);
+    align-items: center;
+}
+
+.mamont-art-footer__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+}
+
+.mamont-art-footer__nav button {
+    width: fit-content;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: #0d4f96;
+    padding: 0;
+    font-size: 1rem;
+    font-weight: 800;
+    cursor: pointer;
+    transition:
+            color 0.2s ease,
+            transform 0.2s ease;
+}
+
+.mamont-art-footer__nav button:hover {
+    color: $mamont-blue-light;
+    transform: translateX(5px);
+}
+
+/* SOCIAL CARDS */
+
+.mamont-art-footer__socials {
+    justify-self: end;
+    display: grid;
+    grid-template-columns: repeat(3, 110px);
+    gap: 1rem;
+    align-items: center;
+}
+
+.mamont-art-footer__social-card {
+    width: 110px;
+    height: 110px;
+    display: grid;
+    place-items: center;
+    text-decoration: none;
+    color: $mamont-white;
+    border-radius: 28px;
+    box-shadow: 0 20px 45px rgba(13, 63, 122, 0.18);
+    transition:
+            transform 0.24s ease,
+            box-shadow 0.24s ease,
+            filter 0.24s ease;
+}
+
+.mamont-art-footer__social-card:nth-child(1) {
+    transform: rotate(-8deg);
+}
+
+.mamont-art-footer__social-card:nth-child(2) {
+    transform: translateY(32px) rotate(7deg);
+}
+
+.mamont-art-footer__social-card:nth-child(3) {
+    transform: rotate(-6deg);
+}
+
+.mamont-art-footer__social-card svg {
+    width: 52px;
+    height: 52px;
+    fill: currentColor;
+}
+
+.mamont-art-footer__social-card--facebook {
+    background: #2f79c7;
+}
+
+.mamont-art-footer__social-card--instagram {
+    background:
+            radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+}
+
+.mamont-art-footer__social-card--linkedin {
+    background: #168bd6;
+}
+
+.mamont-art-footer__social-card {
+    overflow: hidden;
+    will-change: filter, box-shadow;
+}
+
+.mamont-art-footer__social-card svg {
+    transition: transform 0.24s ease;
+}
+
+.mamont-art-footer__social-card:hover {
+    filter: brightness(1.08);
+    box-shadow: 0 28px 60px rgba(13, 63, 122, 0.28);
+}
+
+.mamont-art-footer__social-card:hover svg {
+    transform: scale(1.08);
+}
+
+/* BOTTOM */
+
+.mamont-art-footer__bottom {
+    position: relative;
+    z-index: 4;
+    background: linear-gradient(135deg, #2586d6 0%, #36b2ed 100%);
+    color: $mamont-white;
+}
+
+.mamont-art-footer__bottom-inner {
+    min-height: 110px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.mamont-art-footer__bottom small {
+    display: block;
+    color: rgba(255, 255, 255, 0.74);
+    font-size: 0.72rem;
+    font-weight: 950;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
 }
-footer .up-footer p {
-    color: white;
+
+.mamont-art-footer__bottom strong {
+    display: block;
+    color: $mamont-white;
+    font-size: 1.05rem;
+    font-weight: 900;
 }
-footer .up-footer img {
-    margin-top: 20px;
-}
-footer .up-footer ul.tag-list {
+
+.mamont-art-footer__bottom p {
     margin: 0;
-    padding: 0;
-}
-footer .up-footer ul.tag-list li {
-    display: inline-block;
-    margin-right: 2px;
-    margin-bottom: 6px;
-}
-footer .up-footer ul.tag-list li a {
-    display: inline-block;
-    text-decoration: none;
-    transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    -webkit-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
-    padding: 8px 18px;
-    color: rgba(255, 255, 255, 0.8);
-    border: 1px solid rgba(255, 255, 255, 0.8);
-    font-size: 12px;
-    font-family: 'Open Sans', sans-serif;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    -o-border-radius: 3px;
-    border-radius: 3px;
-}
-footer .up-footer ul.tag-list li a:hover {
-    background: #286eab;
-    border: 1px solid #286eab;
-}
-footer .up-footer ul.navigation {
-    margin: 0;
-    padding: 0;
-}
-footer .up-footer ul.navigation li {
-    list-style: none;
-    margin-bottom: 5px;
-}
-footer .up-footer ul.navigation li a {
-    display: inline-block;
-    text-decoration: none;
-    transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    -webkit-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
-    font-size: 12px;
-    font-family: 'Montserrat', sans-serif;
     color: rgba(255, 255, 255, 0.9);
-}
-footer .up-footer ul.navigation li a:hover {
-    color: #286eab;
-}
-.footer-widget .link-list a {
-    color: white;
-    text-transform: capitalize;
-    line-height: 30px;
-}
-.footer-widget .link-list{
-    list-style: none;
-    padding: 0px;
-}
-footer .up-footer .info-widget p {
-    margin-bottom: 5px;
-}
-footer .up-footer .info-widget p span {
-    font-family: 'Montserrat', sans-serif;
-    color: #c5c5c5;
-}
-footer .up-footer .info-widget p.first-par {
-    margin-bottom: 20px;
-}
-footer .copyright {
-    padding: 25px 0;
-    background: #286eab;
-    border-top: 1px solid #286eab;
-    text-transform: uppercase;
-    font-size: 13px;
-    font-family: 'Montserrat', sans-serif;
-    color: white;
+    font-size: 0.82rem;
     text-align: center;
-    margin: 0;
 }
-footer .copyright p{
-    color: white;
-    text-transform: capitalize;
+
+.mamont-art-footer__follow {
+    justify-self: end;
+    text-align: left;
+}
+
+.mamont-art-footer__follow span {
+    display: block;
+    color: $mamont-white;
+    font-weight: 900;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 991px) {
+    .mamont-art-footer__blue-area {
+        padding: 3.5rem 0 5rem;
+    }
+
+    .mamont-art-footer__inner {
+        grid-template-columns: 1fr;
+    }
+
+    .mamont-art-footer__contact-card {
+        justify-self: start;
+        max-width: 420px;
+    }
+
+    .mamont-art-footer__white-band {
+        margin-top: -3rem;
+        clip-path: polygon(0 8%, 100% 0, 100% 100%, 0 100%);
+    }
+
+    .mamont-art-footer__white-inner {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        padding-top: 4.5rem;
+    }
+
+    .mamont-art-footer__socials {
+        justify-self: start;
+        grid-template-columns: repeat(3, 88px);
+    }
+
+    .mamont-art-footer__social-card {
+        width: 88px;
+        height: 88px;
+        border-radius: 22px;
+    }
+
+    .mamont-art-footer__social-card svg {
+        width: 42px;
+        height: 42px;
+    }
+
+    .mamont-art-footer__bottom-inner {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        padding: 1.5rem 0;
+        gap: 0.7rem;
+    }
+
+    .mamont-art-footer__bottom p {
+        text-align: left;
+    }
+
+    .mamont-art-footer__follow {
+        justify-self: start;
+    }
+}
+
+@media (max-width: 575px) {
+    .mamont-art-footer__brand span {
+        font-size: 3.1rem;
+    }
+
+    .mamont-art-footer__brand strong {
+        font-size: 2.35rem;
+    }
+
+    .mamont-art-footer__brand-block p {
+        font-size: 0.92rem;
+    }
+
+    .mamont-art-footer__white-inner {
+        padding-top: 4rem;
+    }
+
+    .mamont-art-footer__socials {
+        grid-template-columns: repeat(3, 1fr);
+        width: 100%;
+        gap: 0.75rem;
+    }
+
+    .mamont-art-footer__social-card {
+        width: 100%;
+        height: 78px;
+        border-radius: 20px;
+    }
+
+    .mamont-art-footer__social-card:nth-child(1),
+    .mamont-art-footer__social-card:nth-child(2),
+    .mamont-art-footer__social-card:nth-child(3) {
+        transform: none;
+    }
+
+    .mamont-art-footer__social-card:nth-child(1):hover,
+    .mamont-art-footer__social-card:nth-child(2):hover,
+    .mamont-art-footer__social-card:nth-child(3):hover {
+        transform: translateY(-5px);
+    }
 }

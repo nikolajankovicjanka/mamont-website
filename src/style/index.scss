@@ -1,7 +1,9 @@
 
-@use "template/header";
+@use "template/navbar";
 @use "template/homepage";
 @use 'template/footer';
+@use 'template/projects';
+@use 'template/career';
 
 @use 'template/about-us';
 @use'template/project-page';

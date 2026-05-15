@@ -1,424 +1,577 @@
-.primary-color {
-    color: #286eab;
-}
-.news-section .news-post {
-    margin-bottom: 30px;
-}
-.news-section .news-post img {
-    width: 100%;
-    max-height: 500px;
-}
+$mamont-blue: #286eab;
+$mamont-blue-dark: #123a5a;
+$mamont-blue-soft: #eaf3fb;
+$mamont-text: #142433;
+$mamont-muted: #667789;
+$mamont-border: rgba(20, 36, 51, 0.1);
+$mamont-white: #ffffff;
 
-.news-section .news-post h1 {
-    margin-bottom: 2px;
-    font-size: 5rem;
-    margin-bottom: 20px;
-}
-.news-section .news-post h1 a {
-    display: inline-block;
-    text-decoration: none;
-    transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    -webkit-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
-    color: #16558c;
-    font-size: 1.5rem;
-    text-transform: uppercase;
-    font-weight: 600;
-}
-.news-section-home .blog_infos li{
-    font-size: 11px;
-}
-.news-section-home .post-content-text{
-    text-align: center;
-}
-.news-section .news-post h1 a:hover {
-    color: #3e8bcb;
-}
-.news-section .news-post span {
-    display: inline-block;
-    color: #666666;
-    font-size: 11px;
-    font-weight: 400;
-    font-family: 'Montserrat', sans-serif;
-    text-transform: uppercase;
-    margin: 0 0 20px;
-}
-.news-section .news-post .btn.readmore {
-    font-weight: 500;
-    text-transform: uppercase;
-    color: #fff;
-    display: inline-block;
-    background: #286eab;
-    position: relative;
-    line-height: 40px;
-    border-radius: 3px;
-    margin-bottom: 27px;
-    font-size: 14px;
-    margin-top: 40px;
-    padding: 0px 27px;
-}
-.news-section .news-post > a:hover {
-    color: #286eab;
-}
-.news-section .news-box .col-md-3{
-    padding: 0px 7.5px;
-}
-.news-section .news-box article{
-    box-shadow: 0 2px 5px 3px #eff1f8;
-    padding: 0px 15px;
-    float: left;
-    background: #fff;
-}
-.news-section .news-box article .img-box{
-    margin-left: -15px;
-    margin-right: -15px;
-}
-
-.news-section .news-post .img-box img {
-
-}
-
-
-.custom-border {
-    position: relative;
-    padding-bottom: 10px;
-}
-
-.custom-border::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100px;
-    height: 5px;
-    background-color: #286eab;
-}
-
-.gallery {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    padding: 20px;
-}
-
-.gallery-item {
-    flex: 1 1 calc(33.333% - 10px); /* 3 slike po redu */
-    cursor: pointer;
+.mamont-home {
+    background: #f7fafc;
+    color: $mamont-text;
     overflow: hidden;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
 }
 
-.gallery-item:hover {
-    transform: scale(1.05);
+/* HERO */
+
+.mamont-hero {
+    position: relative;
+    min-height: 660px;
+    background: $mamont-blue-dark;
 }
 
-.gallery-image {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 8px;
+.mamont-hero__swiper,
+.mamont-hero__slide {
+    min-height: 660px;
 }
 
-.back-to-top {
-    position: fixed;
-    bottom: 60px;
-    right: 70px;
-    width: 60px;
-    height: 60px;
-    background-color: #286eab;
-    color: white;
-    border-radius: 50%;
+.mamont-hero__slide {
+    position: relative;
     display: flex;
     align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    font-size: 20px;
-    -moz-border-radius: 200px 200px 200px 200px;
-    -webkit-border-radius: 200px 200px 200px 200px;
-    border: 1px solid #ffffff;
-    transition: background-color 0.3s ease;
-    z-index: 1000;
 }
 
-.back-to-top:hover {
-    background-color: #0056b3;
-}
-
-.slide-image-homepage {
-    width: 100%;
-    max-height: 600px;
-    object-fit: contain;
-    display: block;
-    margin: 0 auto;
-}
-
-.swiper-homepage {
-    width: 100%;
-    height: 100%;
-}
-
-.swiper-slide-homepage {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.slide-text {
+.mamont-hero__image {
     position: absolute;
-    top: 80%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color:  #286eab;
-    font-size: 2rem;
-    font-weight: bold;
-    text-shadow: 2px 2px 4px rgba(241, 237, 237, 0.7); /* Senka za tekst */
-    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparentni bijeli background */
-    padding: 20px; /* Dodajte prostor oko teksta */
-}
-
-.counter-section {
-    background: linear-gradient(
-                    90deg,
-                    rgba(255, 255, 255, 0.1) 0%,
-                    #286eab 30%,
-                    #286eab 70%,
-                    rgba(255, 255, 255, 0.1) 100%
-    );
-    color: white; /* Bijeli tekst */
-    padding: 10px 0;
-}
-
-.counter-item {
-    padding: 5px;
-}
-
-.counter-number {
-    font-family: 'Georgia', serif;
-    font-size: 2rem;
-    font-weight: lighter;
-    margin-bottom: 10px;
-}
-
-.counter-label {
-    font-size: 1rem;
-    text-transform: uppercase;
-}
-
-
-.text-homepage-title {
-    font-size: 2.5rem; /* Veća veličina fonta */
-    font-weight: bold; /* Podebljan tekst */
-    color:  #286eab; /* Plava boja */
-    margin-bottom: 1.5rem; /* Veći razmak ispod naslova */
-    text-transform: uppercase; /* Pretvara tekst u velika slova */
-    letter-spacing: 1px; /* Razmak između slova */
-}
-
-.text-homepage-title::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100px;
-    height: 5px;
-    background-color: #286eab;
-}
-
-
-.text-homepage-small {
-    font-size: 1.25rem;
-    color: white;
-    margin-bottom: 1rem;
-    line-height: 1.6;
-    font-weight: bolder;
-    background: #286eab;
-    border-radius: 5px;
-    border: 1px solid white;
-}
-.text-homepage-small:hover {
-    font-size: 1.25rem;
-    color: #286eab;
-    margin-bottom: 1rem;
-    line-height: 1.6;
-    font-weight: bolder;
-    background: white;
-    border-radius: 5px;
-    border: 1px solid #286eab;
-    transition: color 0.3s ease;
-}
-
-/* Opcioni hover efekat za h5 */
-.text-homepage h5:hover {
-    color: #286eab; /* Plava boja na hover */
-    transition: color 0.3s ease; /* Glatka animacija */
-}
-
-.image-homepage {
-    max-height: 50vh;
-    max-width: 100vw;
+    inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
-    border-radius: 10px;
-    transition: transform 0.3s ease, border-radius 0.3s ease;
+    transform: scale(1.03);
 }
 
-.image-homepage:hover {
-    transform: scale(1.05);
-    border-radius: 10px;
-}
-.clients-section {
-    padding: 50px 0;
-    background-color: ghostwhite;
-}
-
-.clients-section .logo-panel img {
-    margin: 15px 0;
-    border: 1px solid #ededed;
-    border-radius: 2px;
-    transition: all 200ms ease-out;
-    box-shadow: 0 1px 2px #ededed;
-    opacity: 0.6;
-    max-width: 100%;
-    height: auto;
-    background-color: white; /* Dodajte bijelu pozadinu */
-    padding: 10px; /* Dodajte padding za bolji izgled */
+.mamont-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background:
+            linear-gradient(
+                    90deg,
+                    rgba(7, 24, 39, 0.94) 0%,
+                    rgba(7, 24, 39, 0.68) 48%,
+                    rgba(7, 24, 39, 0.2) 100%
+            ),
+            linear-gradient(
+                    180deg,
+                    rgba(7, 24, 39, 0.08) 0%,
+                    rgba(7, 24, 39, 0.42) 100%
+            );
 }
 
-.clients-section .logo-panel img:hover {
-    border: 2px solid #286eab; /* Deblji plavi border pri hoveru */
-    opacity: 1;
+.mamont-hero__content {
+    position: relative;
+    z-index: 2;
+    max-width: 680px;
+    margin-left: max(1rem, 5vw);
+    padding-top: 2.25rem;
+    padding-bottom: 2.25rem;
+    color: $mamont-white;
 }
 
-.clients-section .logo-panel {
+.mamont-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #8ec5f3;
+    font-weight: 800;
+    font-size: 0.76rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    margin-bottom: 0.85rem;
+}
+
+.mamont-hero__content h1 {
+    max-width: 720px;
+    font-size: clamp(2.25rem, 4.35vw, 4.15rem);
+    line-height: 1.04;
+    font-weight: 900;
+    letter-spacing: -0.045em;
+    margin-bottom: 1.05rem;
+}
+
+.mamont-hero__content p {
+    max-width: 540px;
+    color: rgba(255, 255, 255, 0.84);
+    font-size: clamp(0.95rem, 1.1vw, 1.06rem);
+    line-height: 1.65;
+    margin-bottom: 1.55rem;
+}
+
+.mamont-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+}
+
+.mamont-btn {
+    border: 0;
+    border-radius: 999px;
+    padding: 0.82rem 1.25rem;
+    font-weight: 800;
+    font-size: 0.9rem;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+    transition: all 0.22s ease;
+}
+
+.mamont-btn--primary {
+    color: $mamont-white;
+    background: linear-gradient(135deg, $mamont-blue 0%, #1d6098 100%);
+    box-shadow: 0 18px 35px rgba(40, 110, 171, 0.28);
+}
+
+.mamont-btn--primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 24px 45px rgba(40, 110, 171, 0.34);
+}
+
+.mamont-btn--ghost {
+    color: $mamont-white;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(10px);
+}
+
+.mamont-btn--ghost:hover {
+    background: rgba(255, 255, 255, 0.18);
+    transform: translateY(-2px);
+}
+
+.mamont-btn--light {
+    color: $mamont-blue;
+    background: $mamont-white;
+}
+
+.mamont-btn--light:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.18);
+}
+
+/* STATS */
+
+.mamont-stats {
+    position: relative;
+    z-index: 5;
+    margin-top: -64px;
+    padding-bottom: 4rem;
+}
+
+.mamont-stats__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+}
+
+.mamont-stat-card {
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    border-radius: 26px;
+    padding: 1.85rem;
+    box-shadow: 0 24px 70px rgba(18, 58, 90, 0.14);
     text-align: center;
 }
 
-.clients-section ul.client-list {
+.mamont-stat-card h2 {
+    color: $mamont-blue;
+    font-size: clamp(1.9rem, 3.5vw, 3.15rem);
+    font-weight: 900;
     margin: 0;
-    padding: 0;
+}
+
+.mamont-stat-card p {
+    margin: 0.35rem 0 0;
+    color: $mamont-blue-dark;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.8rem;
+}
+
+/* GENERAL SECTIONS */
+
+.mamont-section {
+    padding: clamp(4rem, 8vw, 7rem) 0;
+}
+
+.mamont-section-heading {
+    max-width: 760px;
+    margin: 0 auto 3rem;
+    text-align: center;
+}
+
+.mamont-section-heading h2,
+.mamont-project-band__content h2,
+.mamont-team-preview__content h2 {
+    color: $mamont-blue-dark;
+    font-size: clamp(2.1rem, 4vw, 3.7rem);
+    line-height: 1.04;
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    margin-bottom: 1rem;
+}
+
+.mamont-section-heading p {
+    color: $mamont-muted;
+    font-size: 1.05rem;
+    line-height: 1.75;
+}
+
+/* WHY */
+
+.mamont-why {
+    background:
+            radial-gradient(circle at top left, rgba(40, 110, 171, 0.12), transparent 32%),
+            #f7fafc;
+}
+
+.mamont-why__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+}
+
+.mamont-feature-card {
+    min-height: 280px;
+    background: $mamont-white;
+    border: 1px solid $mamont-border;
+    border-radius: 28px;
+    padding: 2rem;
+    box-shadow: 0 18px 45px rgba(18, 58, 90, 0.07);
+    transition: all 0.22s ease;
+}
+
+.mamont-feature-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 28px 70px rgba(18, 58, 90, 0.12);
+    border-color: rgba(40, 110, 171, 0.28);
+}
+
+.mamont-feature-card__icon {
+    width: 56px;
+    height: 56px;
+    display: grid;
+    place-items: center;
+    border-radius: 18px;
+    background: $mamont-blue-soft;
+    font-size: 1.65rem;
+    margin-bottom: 1.35rem;
+}
+
+.mamont-feature-card h3 {
+    color: $mamont-blue-dark;
+    font-size: 1.25rem;
+    font-weight: 900;
+    margin-bottom: 0.85rem;
+}
+
+.mamont-feature-card p {
+    color: $mamont-muted;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* PROJECT BAND */
+
+.mamont-project-band {
+    padding: 2rem 0;
+    background: linear-gradient(135deg, $mamont-blue 0%, #143752 100%);
+}
+
+.mamont-project-band__grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    align-items: center;
+    gap: 3rem;
+}
+
+.mamont-project-band__image-wrap {
+    position: relative;
+    min-height: 420px;
+}
+
+.mamont-project-band__image-wrap img {
+    position: absolute;
+    bottom: -2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    max-height: 520px;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.mamont-project-band__content {
+    color: $mamont-white;
+    padding: 4rem 0;
+}
+
+.mamont-project-band__content h2 {
+    color: $mamont-white;
+    max-width: 780px;
+    margin-bottom: 1.75rem;
+}
+
+/* TEAM */
+
+.mamont-team-preview {
+    background: $mamont-white;
+}
+
+.mamont-team-preview__grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    align-items: center;
+    gap: 3rem;
+}
+
+.mamont-team-preview__content p {
+    color: $mamont-muted;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.75rem;
+}
+
+.mamont-team-preview__image-wrap {
+    border-radius: 34px;
     overflow: hidden;
+    box-shadow: 0 30px 80px rgba(18, 58, 90, 0.16);
 }
 
-.clients-section ul.client-list li {
-    float: left;
-    width: 25%;
-    list-style: none;
-}
-
-.clients-section ul.client-list li a {
-    display: inline-block;
-    text-decoration: none;
-    transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    -webkit-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
+.mamont-team-preview__image-wrap img {
     width: 100%;
-    opacity: 0.5;
+    height: 560px;
+    object-fit: cover;
+    display: block;
 }
 
-.clients-section ul.client-list li a img {
-    width: 100%;
+/* PARTNERS */
+
+.mamont-partners {
+    background: #f7fafc;
 }
 
-.clients-section ul.client-list li a:hover {
+.mamont-partners__grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+}
+
+.mamont-partners__item {
+    min-height: 120px;
+    background: $mamont-white;
+    border: 1px solid $mamont-border;
+    border-radius: 22px;
+    display: grid;
+    place-items: center;
+    padding: 1.25rem;
+    box-shadow: 0 14px 35px rgba(18, 58, 90, 0.06);
+    transition: all 0.22s ease;
+}
+
+.mamont-partners__item:hover {
+    transform: translateY(-4px);
+    border-color: rgba(40, 110, 171, 0.28);
+    box-shadow: 0 22px 55px rgba(18, 58, 90, 0.11);
+}
+
+.mamont-partners__item img {
+    max-width: 100%;
+    max-height: 72px;
+    object-fit: contain;
+    filter: grayscale(1);
+    opacity: 0.72;
+    transition: all 0.22s ease;
+}
+
+.mamont-partners__item:hover img {
+    filter: grayscale(0);
     opacity: 1;
 }
 
-.clients-section blockquote {
-    margin-top: 60px;
-    border-right: 3px solid #07c5ac;
-    padding: 20px 0;
-    padding-right: 30px;
-    margin-right: 30px;
-    border-left: none;
+/* SWIPER */
+
+.mamont-hero .swiper-button-next,
+.mamont-hero .swiper-button-prev {
+    color: #ffffff !important;
 }
 
-.clients-section blockquote p {
-    font-size: 15px;
-    margin: 0;
+.mamont-hero .swiper-button-next::after,
+.mamont-hero .swiper-button-prev::after {
+    font-size: 2rem;
 }
 
-.clients-section blockquote p span {
-    font-weight: 700;
-    color: #222222;
+.mamont-hero .swiper-pagination-bullet {
+    background: rgba(255, 255, 255, 0.75) !important;
 }
 
-.prioriteti-section {
-    margin-top: 100px;
-    margin-bottom: 100px;
-    height: 300px;
-    padding: 2rem;
-    background-color: #286eab;
+.mamont-hero .swiper-pagination-bullet-active {
+    background: #ffffff !important;
 }
-.prioriteti-section img {
-    position: relative;
-    top: -120px;
-    height: 500px;
-    overflow: hidden;
-}
-@media (max-width: 767px) {
-    .prioriteti-section {
-        overflow: hidden; /* KONTEJNER reže višak */
+
+/* RESPONSIVE */
+
+@media (max-width: 1199px) {
+    .mamont-hero {
+        min-height: 630px;
     }
-    
-    .prioriteti-section img {
-        position: static;     /* uklanja top hack */
-        width: 100%;
+
+    .mamont-hero__swiper,
+    .mamont-hero__slide {
+        min-height: 630px;
+    }
+
+    .mamont-hero__content h1 {
+        font-size: clamp(2.2rem, 5vw, 3.75rem);
+    }
+
+    .mamont-why__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .mamont-partners__grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 991px) {
+    .mamont-hero,
+    .mamont-hero__swiper,
+    .mamont-hero__slide {
+        min-height: 600px;
+    }
+
+    .mamont-hero__content {
+        max-width: 620px;
+    }
+
+    .mamont-hero__content h1 {
+        font-size: clamp(2.15rem, 6.4vw, 3.35rem);
+        line-height: 1.06;
+    }
+
+    .mamont-hero__content p {
+        max-width: 520px;
+        font-size: 0.98rem;
+    }
+
+    .mamont-stats__grid,
+    .mamont-project-band__grid,
+    .mamont-team-preview__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .mamont-project-band__image-wrap {
+        min-height: 320px;
+        order: 2;
+    }
+
+    .mamont-project-band__content {
+        padding: 3rem 0 0;
+    }
+
+    .mamont-team-preview__image-wrap img {
+        height: 420px;
+    }
+}
+
+@media (max-width: 767px) {
+    .mamont-hero {
+        margin-top: 0;
+    }
+
+    .mamont-hero,
+    .mamont-hero__swiper,
+    .mamont-hero__slide {
+        min-height: 570px;
+    }
+
+    .mamont-hero__content {
+        margin-left: 0;
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+        text-align: center;
+    }
+
+    .mamont-eyebrow {
+        justify-content: center;
+        font-size: 0.66rem;
+        letter-spacing: 0.14em;
+        margin-bottom: 0.75rem;
+    }
+
+    .mamont-hero__content h1 {
         max-width: 100%;
-        height: auto;         /* skaluje pravilno */
-        object-fit: contain;  /* ili cover ako želiš */
+        font-size: clamp(1.95rem, 8.4vw, 2.65rem);
+        line-height: 1.1;
+        letter-spacing: -0.04em;
+        margin-bottom: 0.95rem;
+    }
+
+    .mamont-hero__content p {
+        max-width: 100%;
+        font-size: 0.92rem;
+        line-height: 1.55;
+        margin-bottom: 1.25rem;
+    }
+
+    .mamont-hero__actions {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.75rem;
+    }
+
+    .mamont-btn {
+        width: 100%;
+        padding: 0.82rem 1rem;
+    }
+
+    .mamont-stats {
+        margin-top: 0;
+        padding-top: 1rem;
+    }
+
+    .mamont-stats__grid,
+    .mamont-why__grid,
+    .mamont-partners__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .mamont-stat-card {
+        padding: 1.5rem;
+    }
+
+    .mamont-feature-card {
+        min-height: auto;
+    }
+
+    .mamont-project-band__image-wrap img {
+        position: static;
+        transform: none;
+        max-height: 360px;
+        margin: 0 auto;
         display: block;
     }
-    
-}
 
-.prioriteti-section h5 {
-    font-size: 2rem;
-    font-weight: bold;
-    text-align: start;
-    background: linear-gradient(45deg, #ffffff, #f8e3c4); /* Gradient bijele i svijetle boje */
-    -webkit-background-clip: text; /* Primjenjuje gradient na tekst */
-    -webkit-text-fill-color: transparent; /* Čini tekst providnim */
-    
-    @media (max-width: 767px) {
-        font-size: 1rem;
-        padding: 1.25rem;
+    .mamont-project-band__image-wrap {
+        min-height: auto;
+    }
+
+    .mamont-team-preview__image-wrap img {
+        height: 320px;
     }
 }
 
-.team-img {
-    max-height: 600px;
-    width: 600px;
-    border-radius: 1%;
-}
-
-/* Media query za mobilne uređaje (ekrani manji od 768px) */
-@media (max-width: 767px) {
-    .team-img {
-        max-height: 100%; /* Omogućava da slika ne prelazi visinu ekrana */
-        width: 100%; /* Postavlja širinu slike na 100% roditeljskog kontejnera */
-        height: auto; /* Održava omjer slike */
-        border-radius: 2%; /* Zadržava zaobljenost */
+@media (max-width: 420px) {
+    .mamont-hero,
+    .mamont-hero__swiper,
+    .mamont-hero__slide {
+        min-height: 540px;
     }
-}
 
-.mamont-team-title {
-    margin-top: 6rem;
-    font-size: 3rem;
-    font-weight: bolder;
-    color: #286eab;
-    font-family: 'Georgia', serif;
-}
-.mamont-team-text {
-    font-size: 1.75rem;
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    color: #143752;
+    .mamont-hero__content h1 {
+        font-size: clamp(1.85rem, 8vw, 2.35rem);
+    }
+
+    .mamont-hero__content p {
+        font-size: 0.9rem;
+    }
 }

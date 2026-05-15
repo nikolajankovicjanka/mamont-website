@@ -1,217 +1,310 @@
 <template>
-    <div class="container-fluid mb-4" style="margin-top: 80px">
-        <swiper
-                class="swiper-homepage"
-                :modules="modules"
-                :slides-per-view="1"
-                :space-between="50"
-                navigation
-                pagination
-                :autoplay="{ delay: 3000, disableOnInteraction: false }"
-                :speed="1000"
-                @swiper="onSwiper"
-                @slideChange="onSlideChange"
+  <main class="mamont-home">
+    <section class="mamont-hero">
+      <swiper
+          class="mamont-hero__swiper"
+          :modules="modules"
+          :slides-per-view="1"
+          :space-between="0"
+          navigation
+          pagination
+          :autoplay="{ delay: 4500, disableOnInteraction: false }"
+          :speed="900"
+      >
+        <swiper-slide
+            v-for="(image, index) in images"
+            :key="image"
+            class="mamont-hero__slide"
         >
-            <swiper-slide class="swiper-slide-homepage" v-for="(image, index) in images" :key="index">
-                <img :src="image" :alt="'Slide ' + (index + 1)" class="slide-image-homepage" />
-                <!-- Dodajte slogane za svaki slajd -->
-                <div class="slide-text d-none d-md-block">
-                    <h2>{{ slogans[index] }}</h2>
-                </div>
-            </swiper-slide>
-        </swiper>
-    </div>
+          <img
+              :src="image"
+              :alt="'Mamont Montage projekat ' + (index + 1)"
+              class="mamont-hero__image"
+          />
 
-    <div class="counter-section">
-        <div class="container-fluid">
-            <div class="row text-center">
-                <div class="col-md-4">
-                    <div class="counter-item">
-                        <h2 class="counter-number">{{ animatedClients }}</h2>
-                        <p class="counter-label">{{ $t('homepage.zadovoljnih_klijenata') }}</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="counter-item">
-                        <h2 class="counter-number">{{ animatedProjects }}</h2>
-                        <p class="counter-label">{{ $t('homepage.projekata') }}</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="counter-item">
-                        <h2 class="counter-number">{{ animatedEmployees }}</h2>
-                        <p class="counter-label">{{ $t('homepage.zaposlenih') }}</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+          <div class="mamont-hero__overlay"></div>
 
-    <div class="container mt-4 mb-4 d-block d-md-flex" style="padding-top: 5rem;">
-        <div class="col-lg-7 p-3">
-            <div style="background-color: rgba(255, 255, 255, 0.8); padding: 20px; border-radius: 10px;">
-                <h1 class="text-homepage-title custom-border">{{ $t('homepage.zasto_mamont') }}</h1>
-                <h5 class="text-homepage-small">{{ $t('homepage.zato_sto') }}</h5>
-                <h5 class="text-homepage-small">{{ $t('homepage.lojalnost') }}</h5>
-                <h5 class="text-homepage-small">{{ $t('homepage.iskustvo') }}</h5>
-                <h5 class="text-homepage-small">{{ $t('homepage.visokokvalifikovani_radnici') }}</h5>
-                <svg viewBox="0 0 24 24" class="icons-mamont">
-                    <path :d="mdiLightbulbOn20" />
-                </svg>
-            </div>
-        </div>
-        <div class="col-lg-5">
-            <img :src="imageHomepage" class="image-homepage">
-        </div>
-    </div>
+          <div class="container mamont-hero__content">
+                        <span class="mamont-eyebrow">
+                            {{ label('homepage.hero_eyebrow', 'Elektro-montaža • Industrija • Energetika') }}
+                        </span>
 
-    <div class="prioriteti-section">
-        <div class="container-fluid  d-flex p-0">
-            <div class="col-lg-7">
-                <img :src="homepageWorker" alt="Prioriteti slika">
-            </div>
-            <div class="col-md-5 d-flex mt-3 mt-md-5">
-                <h5>{{ $t('homepage.svaki_projekat') }}</h5>
-            </div>
-        </div>
-    </div>
+            <h1>{{ slogans[index] }}</h1>
 
-    <div class="container-fluid bg-light-subtle mt-5 mb-5">
-        <div class="d-block d-md-flex justify-content-center">
-            <div class="col-lg-6">
-                <h1 class="mamont-team-title">{{ $t('homepage.mamont_tim_u_akciji') }}</h1>
-                <h5 class="mamont-team-text">{{ $t('homepage.za_nas') }}</h5>
-            </div>
-            <div  class="col-lg-6">
-                <img src="/assets/images/mamont_images/mamont-team1.jpg" class="team-img" alt="Prioriteti slika">
-            </div>
-        </div>
-    </div>
+            <p>
+              {{ label(
+                'homepage.hero_text',
+            ) }}
+            </p>
 
-    <section class="clients-section pt-5 mt-4">
-        <div class="container">
-            <div class="project-title title">
-                <span class="sm-title">{{ $t('homepage.klijenti_od_povjerenja') }}</span>
-                <h1 class="text-homepage-title custom-border">{{ $t('homepage.partneri') }}</h1>
-                <p>{{ $t('homepage.sa_zadovoljstvom') }}</p>
+            <div class="mamont-hero__actions">
+              <button class="mamont-btn mamont-btn--primary" @click="navigateTo('/services')">
+                {{ label('homepage.pogledaj_usluge', 'Pogledaj usluge') }}
+              </button>
+
+              <button class="mamont-btn mamont-btn--ghost" @click="navigateTo('/karijera')">
+                {{ label('homepage.prijavi_se', 'Prijavi se za posao') }}
+              </button>
             </div>
-            <div class="row">
-                <div class="textwidget">
-                    <div class="logo-panel">
-                        <div class="row d-block d-md-flex">
-                            <div class="col"><img :src="partner1" alt="Client" height="98" width="208"></div>
-                            <div class="col"><img :src="partner2" alt="Client" height="98" width="208"></div>
-                            <div class="col"><img :src="partner3" alt="Client" height="98" width="208"></div>
-                            <div class="col"><img :src="partner4" alt="Client" height="98" width="208"></div>
-                            <div class="col"><img :src="partner5" alt="Client" height="98" width="208"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+          </div>
+        </swiper-slide>
+      </swiper>
     </section>
+
+    <section class="mamont-stats">
+      <div class="container">
+        <div class="mamont-stats__grid">
+          <article v-for="stat in stats" :key="stat.label" class="mamont-stat-card">
+            <h2>{{ stat.value }}+</h2>
+            <p>{{ stat.label }}</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="mamont-section mamont-why">
+      <div class="container">
+        <div class="mamont-section-heading">
+                    <span class="mamont-eyebrow">
+                        {{ label('homepage.why_eyebrow', 'Zašto izabrati nas') }}
+                    </span>
+
+          <h2>{{ label('homepage.zasto_mamont', 'Zašto Mamont?') }}</h2>
+
+          <p>
+            {{ label(
+              'homepage.why_description',
+          ) }}
+          </p>
+        </div>
+
+        <div class="mamont-why__grid">
+          <article
+              v-for="reason in reasonCards"
+              :key="reason.title"
+              class="mamont-feature-card"
+          >
+            <div class="mamont-feature-card__icon">
+              {{ reason.icon }}
+            </div>
+
+            <h3>{{ reason.title }}</h3>
+            <p>{{ reason.text }}</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="mamont-project-band">
+      <div class="container">
+        <div class="mamont-project-band__grid">
+          <div class="mamont-project-band__image-wrap">
+            <img :src="homepageWorker" alt="Mamont elektro-montažer" />
+          </div>
+
+          <div class="mamont-project-band__content">
+                        <span class="mamont-eyebrow">
+                            {{ label('homepage.project_eyebrow', 'Rad na terenu') }}
+                        </span>
+
+            <h2>{{ label('homepage.svaki_projekat', 'Svaki projekat zahtijeva odgovornost, preciznost i tim kojem možete vjerovati.') }}</h2>
+
+            <button class="mamont-btn mamont-btn--light" @click="navigateTo('/projects')">
+              {{ label('homepage.pogledaj_projekte', 'Pogledaj projekte') }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mamont-section mamont-team-preview">
+      <div class="container">
+        <div class="mamont-team-preview__grid">
+          <div class="mamont-team-preview__content">
+                        <span class="mamont-eyebrow">
+                            {{ label('homepage.team_eyebrow', 'Naš tim') }}
+                        </span>
+
+            <h2>{{ label('homepage.mamont_tim_u_akciji', 'Mamont tim u akciji') }}</h2>
+
+            <p>{{ label('homepage.za_nas', 'Za nas je svaki projekat odgovornost prema klijentu, timu i standardu koji gradimo.') }}</p>
+
+            <button class="mamont-btn mamont-btn--primary" @click="navigateTo('/tim')">
+              {{ label('homepage.upoznaj_tim', 'Upoznaj tim') }}
+            </button>
+          </div>
+
+          <div class="mamont-team-preview__image-wrap">
+            <img
+                src="/assets/images/mamont_images/mamont-team1.jpg"
+                alt="Mamont tim"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mamont-section mamont-partners">
+      <div class="container">
+        <div class="mamont-section-heading">
+                    <span class="mamont-eyebrow">
+                        {{ label('homepage.klijenti_od_povjerenja', 'Klijenti od povjerenja') }}
+                    </span>
+
+          <h2>{{ label('homepage.partneri', 'Partneri') }}</h2>
+
+          <p>{{ label('homepage.sa_zadovoljstvom', 'Sa zadovoljstvom ističemo partnere i klijente koji su nam ukazali povjerenje.') }}</p>
+        </div>
+
+        <div class="mamont-partners__grid">
+          <div
+              v-for="partner in partners"
+              :key="partner.alt"
+              class="mamont-partners__item"
+          >
+            <img :src="partner.src" :alt="partner.alt" />
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 </template>
 
 <script>
+import { computed, onBeforeUnmount, onMounted, ref } from 'vue';
+import { useRouter } from 'vue-router';
+import { useI18n } from 'vue-i18n';
+
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/swiper-bundle.css';
-import { ref, onMounted, computed } from 'vue';
-import { mdiLightbulbOn20 } from '@mdi/js';
-import { useI18n } from 'vue-i18n';
 
 export default {
-    name: 'HomePage',
-    components: {
-        Swiper,
-        SwiperSlide,
-    },
-    props: {
-        msg: String
-    },
-    data() {
-        return {
-            imageHomepage: '/assets/images/test_images/image1.jpg',
-            homepageWorker: '/assets/images/homepage_images/homepage-worker.png',
-            partner1: '/assets/images/homepage_images/logo-5.png',
-            partner2: '/assets/images/homepage_images/mtm-logo.png',
-            partner3: '/assets/images/homepage_images/Paree-logo.png',
-            partner4: '/assets/images/homepage_images/Rellium-Logo.png',
-            partner5: '/assets/images/homepage_images/RS_solutions_logo.png',
-            mdiLightbulbOn20,
-            visible: false,
-            index: 0,
-        };
-    },
-    setup() {
-        const animatedClients = ref(0);
-        const animatedProjects = ref(0);
-        const animatedEmployees = ref(0);
+  name: 'HomePage',
 
-        const { t } = useI18n();
+  components: {
+    Swiper,
+    SwiperSlide,
+  },
 
-        const startCounting = (target, refValue, duration) => {
-            let start = 0;
-            const increment = target / (duration / 16); // 16ms za 60fps
+  setup() {
+    const router = useRouter();
+    const { t, te } = useI18n();
 
-            const timer = setInterval(() => {
-                start += increment;
-                if (start >= target) {
-                    refValue.value = target;
-                    clearInterval(timer);
-                } else {
-                    refValue.value = Math.ceil(start);
-                }
-            }, 16);
-        };
+    const animatedClients = ref(0);
+    const animatedProjects = ref(0);
+    const animatedEmployees = ref(0);
 
-        onMounted(() => {
-            startCounting(74, animatedClients, 2000);
-            startCounting(55, animatedProjects, 2000);
-            startCounting(80, animatedEmployees, 2000);
-        });
+    const timers = [];
 
-        const images = [
-            '/assets/images/homepage_images/homepageslider1.jpg',
-            '/assets/images/homepage_images/homepageslider2.jpg',
-            '/assets/images/homepage_images/homepageslider3.jpg',
-        ];
+    const imageHomepage = '/assets/images/test_images/image1.jpg';
+    const homepageWorker = '/assets/images/homepage_images/homepage-worker.png';
 
-        const slogans = computed(() => [
-            t('slogans.prvi_slajd'),
-            t('slogans.drugi_slajd'),
-            t('slogans.treci_slajd'),
-        ]);
+    const images = [
+      '/assets/images/homepage_images/homepageslider1.jpg',
+      '/assets/images/homepage_images/homepageslider2.jpg',
+      '/assets/images/homepage_images/homepageslider3.jpg',
+    ];
 
-        const onSwiper = (swiper) => {
-            console.log('Swiper instance:', swiper);
-        };
+    const partners = [
+      { src: '/assets/images/homepage_images/logo-5.png', alt: 'Partner 1' },
+      { src: '/assets/images/homepage_images/mtm-logo.png', alt: 'MTM' },
+      { src: '/assets/images/homepage_images/Paree-logo.png', alt: 'Paree' },
+      { src: '/assets/images/homepage_images/Rellium-Logo.png', alt: 'Rellium' },
+      { src: '/assets/images/homepage_images/RS_solutions_logo.png', alt: 'RS Solutions' },
+    ];
 
-        const onSlideChange = () => {
-            console.log('Slide changed');
-        };
+    const label = (key, fallback) => {
+      return te(key) ? t(key) : fallback;
+    };
 
-        return {
-            modules: [Navigation, Pagination, Autoplay],
-            images,
-            slogans,
-            onSwiper,
-            onSlideChange,
-            animatedClients,
-            animatedProjects,
-            animatedEmployees,
-            t,
-        };
-    },
+    const slogans = computed(() => [
+      label('slogans.prvi_slajd', 'Snaga pouzdanosti, stručnost bez granica'),
+      label('slogans.drugi_slajd', 'Inovativna rješenja za svaki strujni izazov'),
+      label('slogans.treci_slajd', 'Gradimo budućnost, kabel po kabel'),
+    ]);
 
-    methods: {
-        showLightbox(index) {
-            this.index = index;
-            this.visible = true;
-        },
-    },
+    const stats = computed(() => [
+      {
+        value: animatedClients.value,
+        label: label('homepage.zadovoljnih_klijenata', 'Zadovoljnih klijenata'),
+      },
+      {
+        value: animatedProjects.value,
+        label: label('homepage.projekata', 'Projekata'),
+      },
+      {
+        value: animatedEmployees.value,
+        label: label('homepage.zaposlenih', 'Zaposlenih'),
+      },
+    ]);
+
+    const reasonCards = computed(() => [
+      {
+        icon: '⚡',
+        title: label('homepage.reason_1_title', 'Pouzdanost'),
+        text: label('homepage.zato_sto', 'Zato što svakom projektu pristupamo odgovorno i precizno.'),
+      },
+      {
+        icon: '🤝',
+        title: label('homepage.reason_2_title', 'Lojalnost'),
+        text: label('homepage.lojalnost', 'Gradimo dugoročne odnose sa klijentima i partnerima.'),
+      },
+      {
+        icon: '🛠',
+        title: label('homepage.reason_3_title', 'Iskustvo'),
+        text: label('homepage.iskustvo', 'Naš tim ima iskustvo na zahtjevnim elektro-montažnim projektima.'),
+      },
+      {
+        icon: '👷',
+        title: label('homepage.reason_4_title', 'Stručan kadar'),
+        text: label('homepage.visokokvalifikovani_radnici', 'Raspolažemo visokokvalifikovanim radnicima spremnim za ozbiljne projekte.'),
+      },
+    ]);
+
+    const startCounting = (target, valueRef, duration = 1800) => {
+      const startedAt = performance.now();
+
+      const timer = setInterval(() => {
+        const elapsed = performance.now() - startedAt;
+        const progress = Math.min(elapsed / duration, 1);
+
+        valueRef.value = Math.ceil(target * progress);
+
+        if (progress >= 1) {
+          clearInterval(timer);
+        }
+      }, 16);
+
+      timers.push(timer);
+    };
+
+    const navigateTo = (path) => {
+      router.push(path);
+    };
+
+    onMounted(() => {
+      startCounting(74, animatedClients);
+      startCounting(55, animatedProjects);
+      startCounting(80, animatedEmployees);
+    });
+
+    onBeforeUnmount(() => {
+      timers.forEach((timer) => clearInterval(timer));
+    });
+
+    return {
+      modules: [Navigation, Pagination, Autoplay],
+      images,
+      imageHomepage,
+      homepageWorker,
+      partners,
+      slogans,
+      stats,
+      reasonCards,
+      label,
+      navigateTo,
+    };
+  },
 };
 </script>
-
-<style scoped>
-</style>

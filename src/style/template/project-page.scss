@@ -1,17 +1,465 @@
-.slide-image {
-    width: 100%; /* Slika će popuniti širinu roditeljskog kontejnera */
-    max-height: 800px; /* Maksimalna visina slike */
-    display: block;
-    margin: 0 auto;
+$mamont-blue: #286eab;
+$mamont-blue-dark: #123a5a;
+$mamont-blue-deep: #061827;
+$mamont-blue-soft: #eaf3fb;
+$mamont-text: #142433;
+$mamont-muted: #667789;
+$mamont-border: rgba(20, 36, 51, 0.1);
+$mamont-white: #ffffff;
+
+.mamont-services {
+    background: #f7fafc;
+    color: $mamont-text;
+    overflow: hidden;
 }
 
-.swiper {
+/* HERO */
+
+.mamont-services-hero {
+    position: relative;
+    min-height: 560px;
+    display: flex;
+    align-items: center;
+    background: $mamont-blue-deep;
+    color: $mamont-white;
+    overflow: hidden;
+}
+
+.mamont-services-hero__bg {
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transform: scale(1.04);
 }
 
-.swiper-slide {
-    display: flex;
-    justify-content: center;
+.mamont-services-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background:
+            linear-gradient(90deg, rgba(7, 24, 39, 0.96) 0%, rgba(7, 24, 39, 0.72) 48%, rgba(7, 24, 39, 0.22) 100%),
+            radial-gradient(circle at 15% 0%, rgba(40, 110, 171, 0.35), transparent 35%);
+}
+
+.mamont-services-hero__content {
+    position: relative;
+    z-index: 2;
+    max-width: 720px;
+    padding: 5rem 0;
+}
+
+.mamont-services__eyebrow {
+    display: inline-flex;
     align-items: center;
+    color: #8ec5f3;
+    font-size: 0.76rem;
+    font-weight: 900;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 0.85rem;
+}
+
+.mamont-services-hero__content h1 {
+    color: $mamont-white;
+    font-size: clamp(2.35rem, 4.7vw, 4.45rem);
+    line-height: 1.03;
+    font-weight: 950;
+    letter-spacing: -0.05em;
+    margin-bottom: 1.15rem;
+}
+
+.mamont-services-hero__content p {
+    max-width: 620px;
+    color: rgba(255, 255, 255, 0.84);
+    font-size: clamp(1rem, 1.25vw, 1.12rem);
+    line-height: 1.75;
+    margin-bottom: 1.75rem;
+}
+
+.mamont-services-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+}
+
+.mamont-services-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    outline: 0;
+    border-radius: 999px;
+    padding: 0.88rem 1.35rem;
+    font-size: 0.92rem;
+    font-weight: 900;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    cursor: pointer;
+    transition:
+            transform 0.22s ease,
+            box-shadow 0.22s ease,
+            background 0.22s ease;
+}
+
+.mamont-services-btn--primary {
+    color: $mamont-white;
+    background: linear-gradient(135deg, $mamont-blue 0%, #1d6098 100%);
+    box-shadow: 0 18px 35px rgba(40, 110, 171, 0.28);
+}
+
+.mamont-services-btn--primary:hover {
+    color: $mamont-white;
+    transform: translateY(-2px);
+    box-shadow: 0 24px 45px rgba(40, 110, 171, 0.34);
+}
+
+.mamont-services-btn--ghost {
+    color: $mamont-white;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(10px);
+}
+
+.mamont-services-btn--ghost:hover {
+    color: $mamont-white;
+    background: rgba(255, 255, 255, 0.18);
+    transform: translateY(-2px);
+}
+
+.mamont-services-btn--light {
+    color: $mamont-blue;
+    background: $mamont-white;
+}
+
+.mamont-services-btn--light:hover {
+    color: $mamont-blue;
+    transform: translateY(-2px);
+    box-shadow: 0 18px 36px rgba(0, 0, 0, 0.16);
+}
+
+/* SERVICES LIST */
+
+.mamont-services-list {
+    padding: clamp(4rem, 8vw, 7rem) 0;
+}
+
+.mamont-services-section-heading {
+    max-width: 760px;
+    margin: 0 auto 3rem;
+    text-align: center;
+}
+
+.mamont-services-section-heading .mamont-services__eyebrow {
+    color: $mamont-blue;
+}
+
+.mamont-services-section-heading h2 {
+    color: $mamont-blue-dark;
+    font-size: clamp(2.1rem, 4vw, 3.7rem);
+    line-height: 1.04;
+    font-weight: 950;
+    letter-spacing: -0.045em;
+    margin-bottom: 1rem;
+}
+
+.mamont-services-section-heading p {
+    color: $mamont-muted;
+    font-size: 1.05rem;
+    line-height: 1.75;
+}
+
+.mamont-services-list__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.35rem;
+}
+
+.mamont-service-card {
+    background: $mamont-white;
+    border: 1px solid $mamont-border;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(18, 58, 90, 0.08);
+    transition:
+            transform 0.22s ease,
+            box-shadow 0.22s ease,
+            border-color 0.22s ease;
+}
+
+.mamont-service-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(40, 110, 171, 0.28);
+    box-shadow: 0 30px 75px rgba(18, 58, 90, 0.14);
+}
+
+.mamont-service-card__image-wrap {
+    position: relative;
+    height: 260px;
+    overflow: hidden;
+    background: $mamont-blue-dark;
+}
+
+.mamont-service-card__image-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.35s ease;
+}
+
+.mamont-service-card:hover .mamont-service-card__image-wrap img {
+    transform: scale(1.06);
+}
+
+.mamont-service-card__image-wrap::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+            linear-gradient(180deg, rgba(7, 24, 39, 0.05) 0%, rgba(7, 24, 39, 0.58) 100%);
+}
+
+.mamont-service-card__number {
+    position: absolute;
+    left: 1.25rem;
+    bottom: 1.15rem;
+    z-index: 2;
+    color: $mamont-white;
+    font-size: 2.7rem;
+    line-height: 1;
+    font-weight: 950;
+    letter-spacing: -0.06em;
+}
+
+.mamont-service-card__body {
+    padding: 1.65rem;
+}
+
+.mamont-service-card__body > span {
+    display: inline-flex;
+    color: $mamont-blue;
+    font-size: 0.74rem;
+    font-weight: 900;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+}
+
+.mamont-service-card__body h3 {
+    color: $mamont-blue-dark;
+    font-size: 1.45rem;
+    line-height: 1.18;
+    font-weight: 950;
+    margin-bottom: 0.85rem;
+}
+
+.mamont-service-card__body p {
+    color: $mamont-muted;
+    font-size: 0.98rem;
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+}
+
+.mamont-service-card__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    color: $mamont-blue;
+    text-decoration: none;
+    font-size: 0.92rem;
+    font-weight: 900;
+    transition:
+            color 0.2s ease,
+            gap 0.2s ease;
+}
+
+.mamont-service-card__link:hover {
+    color: $mamont-blue-dark;
+    gap: 0.7rem;
+}
+
+/* PROCESS */
+
+.mamont-services-process {
+    padding: clamp(4rem, 8vw, 7rem) 0;
+    background: $mamont-white;
+}
+
+.mamont-services-process__grid {
+    display: grid;
+    grid-template-columns: 0.95fr 1.05fr;
+    gap: clamp(2.5rem, 6vw, 5rem);
+    align-items: center;
+}
+
+.mamont-services-process__content .mamont-services__eyebrow {
+    color: $mamont-blue;
+}
+
+.mamont-services-process__content h2 {
+    color: $mamont-blue-dark;
+    font-size: clamp(2.1rem, 4vw, 3.6rem);
+    line-height: 1.04;
+    font-weight: 950;
+    letter-spacing: -0.045em;
+    margin-bottom: 1rem;
+}
+
+.mamont-services-process__content p {
+    color: $mamont-muted;
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.mamont-services-process__steps {
+    display: grid;
+    gap: 1rem;
+}
+
+.mamont-services-process__steps article {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.25rem;
+    border-radius: 26px;
+    background: #f7fafc;
+    border: 1px solid $mamont-border;
+    box-shadow: 0 16px 38px rgba(18, 58, 90, 0.05);
+}
+
+.mamont-services-process__steps strong {
+    width: 56px;
+    height: 56px;
+    flex: 0 0 56px;
+    display: grid;
+    place-items: center;
+    border-radius: 18px;
+    color: $mamont-blue;
+    background: $mamont-blue-soft;
+    font-size: 1rem;
+    font-weight: 950;
+}
+
+.mamont-services-process__steps h3 {
+    color: $mamont-blue-dark;
+    font-size: 1.15rem;
+    font-weight: 950;
+    margin-bottom: 0.35rem;
+}
+
+.mamont-services-process__steps p {
+    color: $mamont-muted;
+    font-size: 0.96rem;
+    line-height: 1.65;
+    margin: 0;
+}
+
+/* CTA */
+
+.mamont-services-cta {
+    padding: clamp(4rem, 7vw, 6rem) 0;
+    background:
+            radial-gradient(circle at 15% 0%, rgba(40, 110, 171, 0.34), transparent 35%),
+            linear-gradient(135deg, #061827 0%, #123a5a 100%);
+}
+
+.mamont-services-cta__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    color: $mamont-white;
+}
+
+.mamont-services-cta__inner h2 {
+    max-width: 760px;
+    color: $mamont-white;
+    font-size: clamp(2rem, 4vw, 3.4rem);
+    line-height: 1.05;
+    font-weight: 950;
+    letter-spacing: -0.045em;
+    margin-bottom: 0.85rem;
+}
+
+.mamont-services-cta__inner p {
+    max-width: 620px;
+    color: rgba(255, 255, 255, 0.76);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1199px) {
+    .mamont-services-list__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 991px) {
+    .mamont-services-hero {
+        min-height: 500px;
+    }
+
+    .mamont-services-process__grid,
+    .mamont-services-cta__inner {
+        grid-template-columns: 1fr;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .mamont-services-cta__inner .mamont-services-btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 767px) {
+    .mamont-services-hero {
+        min-height: 480px;
+        text-align: center;
+    }
+
+    .mamont-services-hero__content {
+        padding: 4rem 0;
+    }
+
+    .mamont-services-hero__content h1 {
+        font-size: clamp(2rem, 9vw, 3rem);
+    }
+
+    .mamont-services-hero__content p {
+        font-size: 0.96rem;
+    }
+
+    .mamont-services-hero__actions {
+        flex-direction: column;
+    }
+
+    .mamont-services-btn {
+        width: 100%;
+    }
+
+    .mamont-services-list,
+    .mamont-services-process,
+    .mamont-services-cta {
+        padding: 3.5rem 0;
+    }
+
+    .mamont-services-list__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .mamont-service-card__image-wrap {
+        height: 230px;
+    }
+
+    .mamont-services-process__steps article {
+        flex-direction: column;
+    }
+
+    .mamont-services-section-heading {
+        margin-bottom: 2.25rem;
+    }
 }

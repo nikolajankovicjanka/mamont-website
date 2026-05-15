@@ -1,47 +1,501 @@
-.icons-mamont {
-    width: 40px;
-    height: 40px;
-    max-width: 100%;
-    max-height: 100%;
-    fill: #286eab;
+$mamont-blue: #286eab;
+$mamont-blue-dark: #123a5a;
+$mamont-blue-deep: #061827;
+$mamont-blue-soft: #eaf3fb;
+$mamont-text: #142433;
+$mamont-muted: #667789;
+$mamont-border: rgba(20, 36, 51, 0.1);
+$mamont-white: #ffffff;
+
+.mamont-about {
+    background: #f7fafc;
+    color: $mamont-text;
+    overflow: hidden;
 }
 
-.icons-mamont-white {
-    width: 40px;
-    height: 40px;
-    max-width: 100%;
-    max-height: 100%;
-    fill: #f1f2f5;
-}
-
-.naslov-tekst {
-    font-family: 'Calibri', serif;
-    font-size: 2rem;
-    font-weight: bold;
+.mamont-about__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #8ec5f3;
+    font-size: 0.76rem;
+    font-weight: 900;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    margin-bottom: 0.85rem;
+}
+
+.mamont-about-hero {
+    position: relative;
+    min-height: 520px;
+    display: flex;
+    align-items: center;
+    background: $mamont-blue-deep;
+    color: $mamont-white;
+    overflow: hidden;
+}
+
+.mamont-about-hero__bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transform: scale(1.03);
+    z-index: 0;
+}
+
+.mamont-about-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background:
+            radial-gradient(circle at 15% 0%, rgba(40, 110, 171, 0.34), transparent 35%),
+            linear-gradient(180deg, rgba(7, 24, 39, 0.05), rgba(7, 24, 39, 0.45));
+}
+
+.mamont-about-hero__content {
+    position: relative;
+    z-index: 2;
+    max-width: 720px;
+    padding: 5rem 0;
+}
+
+.mamont-about-hero__content h1 {
+    max-width: 760px;
+    color: $mamont-white;
+    font-size: clamp(2.35rem, 4.8vw, 4.65rem);
+    line-height: 1.02;
+    font-weight: 950;
+    letter-spacing: -0.05em;
+    margin-bottom: 1.15rem;
+}
+
+.mamont-about-hero__content p {
+    max-width: 620px;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: clamp(1rem, 1.35vw, 1.16rem);
+    line-height: 1.75;
+    margin-bottom: 1.75rem;
+}
+
+.mamont-about-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+}
+
+.mamont-about-btn {
+    border: 0;
+    outline: 0;
+    border-radius: 999px;
+    padding: 0.88rem 1.35rem;
+    font-size: 0.92rem;
+    font-weight: 900;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+    transition:
+            transform 0.22s ease,
+            box-shadow 0.22s ease,
+            background 0.22s ease;
+}
+
+.mamont-about-btn--primary {
+    color: $mamont-white;
+    background: linear-gradient(135deg, $mamont-blue 0%, #1d6098 100%);
+    box-shadow: 0 18px 35px rgba(40, 110, 171, 0.28);
+}
+
+.mamont-about-btn--primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 24px 45px rgba(40, 110, 171, 0.34);
+}
+
+.mamont-about-btn--ghost {
+    color: $mamont-white;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(10px);
+}
+
+.mamont-about-btn--ghost:hover {
+    background: rgba(255, 255, 255, 0.18);
+    transform: translateY(-2px);
+}
+
+/* INTRO */
+
+.mamont-about-intro {
+    padding: clamp(4rem, 8vw, 7rem) 0;
+}
+
+.mamont-about-intro__grid {
+    display: grid;
+    grid-template-columns: 1fr 1.05fr;
+    gap: clamp(2.5rem, 5vw, 5rem);
+    align-items: center;
+}
+
+.mamont-about-intro__content h2,
+.mamont-about-mission__content h2,
+.mamont-about-section-heading h2 {
+    color: $mamont-blue-dark;
+    font-size: clamp(2.15rem, 4vw, 3.65rem);
+    line-height: 1.04;
+    font-weight: 950;
+    letter-spacing: -0.045em;
     margin-bottom: 1rem;
 }
 
-.img-responsive {
+.mamont-about-intro__content > p {
+    color: $mamont-muted;
+    font-size: 1.04rem;
+    line-height: 1.8;
+    margin-bottom: 1.8rem;
+}
+
+.mamont-about-intro__features {
+    display: grid;
+    gap: 0.9rem;
+}
+
+.mamont-about-intro__features article {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    background: $mamont-white;
+    border: 1px solid $mamont-border;
+    border-radius: 22px;
+    box-shadow: 0 16px 38px rgba(18, 58, 90, 0.06);
+}
+
+.mamont-about-intro__icon {
+    width: 46px;
+    height: 46px;
+    flex: 0 0 46px;
+    display: grid;
+    place-items: center;
+    border-radius: 15px;
+    color: $mamont-blue;
+    background: $mamont-blue-soft;
+}
+
+.mamont-about-intro__icon svg {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+}
+
+.mamont-about-intro__features h3 {
+    color: $mamont-blue-dark;
+    font-size: 1rem;
+    font-weight: 900;
+    margin-bottom: 0.25rem;
+}
+
+.mamont-about-intro__features p {
+    color: $mamont-muted;
+    font-size: 0.94rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.mamont-about-intro__image-wrap {
+    position: relative;
+    border-radius: 34px;
+    overflow: hidden;
+    min-height: 520px;
+    box-shadow: 0 30px 80px rgba(18, 58, 90, 0.18);
+}
+
+.mamont-about-intro__image {
     width: 100%;
-    height: auto;
-    max-width: 100%;
+    height: 100%;
+    min-height: 520px;
+    object-fit: cover;
     display: block;
 }
 
-.our-mission {
+.mamont-about-intro__floating-card {
+    position: absolute;
+    left: 1.5rem;
+    bottom: 1.5rem;
+    max-width: 220px;
+    padding: 1rem 1.15rem;
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.94);
+    box-shadow: 0 20px 50px rgba(7, 24, 39, 0.18);
+    backdrop-filter: blur(14px);
+}
+
+.mamont-about-intro__floating-card strong {
     display: block;
-    align-content: center;
-    color: #286eab;
+    color: $mamont-blue;
+    font-size: 2.1rem;
+    font-weight: 950;
+    line-height: 1;
+    margin-bottom: 0.25rem;
 }
-.our-mission h2 {
-    font-size: 2.5rem;
-    color: #286eab;
-    font-weight: bold;
+
+.mamont-about-intro__floating-card span {
+    display: block;
+    color: $mamont-blue-dark;
+    font-size: 0.86rem;
+    font-weight: 850;
+    line-height: 1.35;
 }
-.our-mission h5 {
-    font-size: 1.25rem;
-    color: #286eab;
-    font-weight: bold;
+
+/* MISSION */
+
+.mamont-about-mission {
+    padding: clamp(4rem, 8vw, 7rem) 0;
+    background:
+            radial-gradient(circle at top right, rgba(40, 110, 171, 0.12), transparent 32%),
+            $mamont-white;
+}
+
+.mamont-about-mission__grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: clamp(2.5rem, 5vw, 5rem);
+    align-items: center;
+}
+
+.mamont-about-mission__image-wrap {
+    border-radius: 34px;
+    overflow: hidden;
+    background: #f3f8fc;
+    box-shadow: 0 26px 70px rgba(18, 58, 90, 0.12);
+}
+
+.mamont-about-mission__image {
+    width: 100%;
+    height: 500px;
+    object-fit: contain;
+    display: block;
+    padding: 1.5rem;
+}
+
+.mamont-about-mission__content p {
+    color: $mamont-muted;
+    font-size: 1.04rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.mamont-about-mission__stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 1.8rem;
+}
+
+.mamont-about-mission__stats div {
+    padding: 1.25rem 1rem;
+    border-radius: 24px;
+    background: #f7fafc;
+    border: 1px solid $mamont-border;
+    text-align: center;
+}
+
+.mamont-about-mission__stats strong {
+    display: block;
+    color: $mamont-blue;
+    font-size: clamp(1.85rem, 3vw, 2.6rem);
+    font-weight: 950;
+    line-height: 1;
+    margin-bottom: 0.35rem;
+}
+
+.mamont-about-mission__stats span {
+    display: block;
+    color: $mamont-blue-dark;
+    font-size: 0.74rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+/* VALUES */
+
+.mamont-about-values {
+    padding: clamp(4rem, 8vw, 7rem) 0;
+    background: #f7fafc;
+}
+
+.mamont-about-section-heading {
+    max-width: 760px;
+    margin: 0 auto 3rem;
+    text-align: center;
+}
+
+.mamont-about-section-heading .mamont-about__eyebrow {
+    color: $mamont-blue;
+}
+
+.mamont-about-section-heading p {
+    color: $mamont-muted;
+    font-size: 1.05rem;
+    line-height: 1.75;
+}
+
+.mamont-about-values__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+}
+
+.mamont-about-value-card {
+    min-height: 270px;
+    padding: 2rem;
+    border-radius: 28px;
+    background: $mamont-white;
+    border: 1px solid $mamont-border;
+    box-shadow: 0 18px 45px rgba(18, 58, 90, 0.07);
+    transition:
+            transform 0.22s ease,
+            box-shadow 0.22s ease,
+            border-color 0.22s ease;
+}
+
+.mamont-about-value-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(40, 110, 171, 0.28);
+    box-shadow: 0 28px 70px rgba(18, 58, 90, 0.12);
+}
+
+.mamont-about-value-card__icon {
+    width: 56px;
+    height: 56px;
+    display: grid;
+    place-items: center;
+    border-radius: 18px;
+    color: $mamont-blue;
+    background: $mamont-blue-soft;
+    margin-bottom: 1.35rem;
+}
+
+.mamont-about-value-card__icon svg {
+    width: 28px;
+    height: 28px;
+    fill: currentColor;
+}
+
+.mamont-about-value-card h3 {
+    color: $mamont-blue-dark;
+    font-size: 1.2rem;
+    font-weight: 950;
+    margin-bottom: 0.75rem;
+}
+
+.mamont-about-value-card p {
+    color: $mamont-muted;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1199px) {
+    .mamont-about-values__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 991px) {
+    .mamont-about-hero {
+        min-height: 480px;
+    }
+
+    .mamont-about-intro__grid,
+    .mamont-about-mission__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .mamont-about-intro__image-wrap {
+        min-height: 420px;
+    }
+
+    .mamont-about-intro__image {
+        min-height: 420px;
+    }
+
+    .mamont-about-mission__image {
+        height: 420px;
+    }
+}
+
+@media (max-width: 767px) {
+    .mamont-about-hero {
+        min-height: 460px;
+        text-align: center;
+        background-position: center;
+    }
+
+    .mamont-about-hero__content {
+        padding: 3rem 0;
+    }
+
+    .mamont-about-hero__content h1 {
+        font-size: clamp(1rem, 9vw, 3rem);
+    }
+
+    .mamont-about-hero__content p {
+        font-size: 0.96rem;
+    }
+
+    .mamont-about-hero__actions {
+        flex-direction: column;
+    }
+
+    .mamont-about-btn {
+        width: 100%;
+    }
+
+    .mamont-about__eyebrow {
+        justify-content: center;
+        font-size: 0.68rem;
+        letter-spacing: 0.14em;
+    }
+
+    .mamont-about-intro,
+    .mamont-about-mission,
+    .mamont-about-values {
+        padding: 3.5rem 0;
+    }
+
+    .mamont-about-intro__features article {
+        flex-direction: column;
+    }
+
+    .mamont-about-intro__image-wrap {
+        min-height: 330px;
+        border-radius: 24px;
+    }
+
+    .mamont-about-intro__image {
+        min-height: 330px;
+    }
+
+    .mamont-about-intro__floating-card {
+        left: 1rem;
+        right: 1rem;
+        bottom: 1rem;
+        max-width: none;
+    }
+
+    .mamont-about-mission__image {
+        height: 320px;
+        padding: 1rem;
+    }
+
+    .mamont-about-mission__stats,
+    .mamont-about-values__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .mamont-about-value-card {
+        min-height: auto;
+    }
 }
