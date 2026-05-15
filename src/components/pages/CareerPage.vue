@@ -20,7 +20,7 @@
           <p>
             {{ label(
               'career.hero_subtitle',
-              'Radi na velikim projektima širom Evrope.'
+              'Radi na velikim projektima širom Evrope'
           ) }}
           </p>
 
