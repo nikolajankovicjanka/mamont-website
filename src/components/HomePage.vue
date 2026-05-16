@@ -1,5 +1,5 @@
 <template>
-  <main class="mamont-home">
+  <main ref="homeRef" class="mamont-home">
     <section class="mamont-hero">
       <swiper
           class="mamont-hero__swiper"
@@ -19,21 +19,24 @@
           <img
               :src="image"
               :alt="'Mamont Montage projekat ' + (index + 1)"
-              class="mamont-hero__image"
+              class="mamont-hero__image mamont-image-zoom"
+              :loading="index === 0 ? 'eager' : 'lazy'"
+              decoding="async"
           />
 
           <div class="mamont-hero__overlay"></div>
 
-          <div class="container mamont-hero__content">
-                        <span class="mamont-eyebrow">
-                            {{ label('homepage.hero_eyebrow', 'Elektro-montaža • Industrija • Energetika') }}
-                        </span>
+          <div class="container mamont-hero__content" data-reveal>
+            <span class="mamont-eyebrow">
+              {{ label('homepage.hero_eyebrow', 'Elektro-montaža • Industrija • Energetika') }}
+            </span>
 
             <h1>{{ slogans[index] }}</h1>
 
             <p>
               {{ label(
                 'homepage.hero_text',
+                'Pouzdana elektro-montažna rješenja za industrijske, poslovne i tehnički zahtjevne projekte širom Evrope.'
             ) }}
             </p>
 
@@ -54,7 +57,12 @@
     <section class="mamont-stats">
       <div class="container">
         <div class="mamont-stats__grid">
-          <article v-for="stat in stats" :key="stat.label" class="mamont-stat-card">
+          <article
+              v-for="stat in stats"
+              :key="stat.label"
+              class="mamont-stat-card"
+              data-reveal
+          >
             <h2>{{ stat.value }}+</h2>
             <p>{{ stat.label }}</p>
           </article>
@@ -64,16 +72,17 @@
 
     <section class="mamont-section mamont-why">
       <div class="container">
-        <div class="mamont-section-heading">
-                    <span class="mamont-eyebrow">
-                        {{ label('homepage.why_eyebrow', 'Zašto izabrati nas') }}
-                    </span>
+        <div class="mamont-section-heading" data-reveal>
+          <span class="mamont-eyebrow">
+            {{ label('homepage.why_eyebrow', 'Zašto izabrati nas') }}
+          </span>
 
           <h2>{{ label('homepage.zasto_mamont', 'Zašto Mamont?') }}</h2>
 
           <p>
             {{ label(
               'homepage.why_description',
+              'Kombinujemo iskustvo, stručan kadar i odgovoran pristup kako bismo svaki projekat izveli kvalitetno, sigurno i u dogovorenim rokovima.'
           ) }}
           </p>
         </div>
@@ -83,6 +92,7 @@
               v-for="reason in reasonCards"
               :key="reason.title"
               class="mamont-feature-card"
+              data-reveal
           >
             <div class="mamont-feature-card__icon">
               {{ reason.icon }}
@@ -98,14 +108,19 @@
     <section class="mamont-project-band">
       <div class="container">
         <div class="mamont-project-band__grid">
-          <div class="mamont-project-band__image-wrap">
-            <img :src="homepageWorker" alt="Mamont elektro-montažer" />
+          <div class="mamont-project-band__image-wrap" data-reveal>
+            <img
+                :src="homepageWorker"
+                alt="Mamont elektro-montažer"
+                loading="lazy"
+                decoding="async"
+            />
           </div>
 
-          <div class="mamont-project-band__content">
-                        <span class="mamont-eyebrow">
-                            {{ label('homepage.project_eyebrow', 'Rad na terenu') }}
-                        </span>
+          <div class="mamont-project-band__content" data-reveal>
+            <span class="mamont-eyebrow">
+              {{ label('homepage.project_eyebrow', 'Rad na terenu') }}
+            </span>
 
             <h2>{{ label('homepage.svaki_projekat', 'Svaki projekat zahtijeva odgovornost, preciznost i tim kojem možete vjerovati.') }}</h2>
 
@@ -120,10 +135,10 @@
     <section class="mamont-section mamont-team-preview">
       <div class="container">
         <div class="mamont-team-preview__grid">
-          <div class="mamont-team-preview__content">
-                        <span class="mamont-eyebrow">
-                            {{ label('homepage.team_eyebrow', 'Naš tim') }}
-                        </span>
+          <div class="mamont-team-preview__content" data-reveal>
+            <span class="mamont-eyebrow">
+              {{ label('homepage.team_eyebrow', 'Naš tim') }}
+            </span>
 
             <h2>{{ label('homepage.mamont_tim_u_akciji', 'Mamont tim u akciji') }}</h2>
 
@@ -134,10 +149,12 @@
             </button>
           </div>
 
-          <div class="mamont-team-preview__image-wrap">
+          <div class="mamont-team-preview__image-wrap" data-reveal>
             <img
                 src="/assets/images/mamont_images/mamont-team1.jpg"
                 alt="Mamont tim"
+                loading="lazy"
+                decoding="async"
             />
           </div>
         </div>
@@ -146,10 +163,10 @@
 
     <section class="mamont-section mamont-partners">
       <div class="container">
-        <div class="mamont-section-heading">
-                    <span class="mamont-eyebrow">
-                        {{ label('homepage.klijenti_od_povjerenja', 'Klijenti od povjerenja') }}
-                    </span>
+        <div class="mamont-section-heading" data-reveal>
+          <span class="mamont-eyebrow">
+            {{ label('homepage.klijenti_od_povjerenja', 'Klijenti od povjerenja') }}
+          </span>
 
           <h2>{{ label('homepage.partneri', 'Partneri') }}</h2>
 
@@ -161,8 +178,14 @@
               v-for="partner in partners"
               :key="partner.alt"
               class="mamont-partners__item"
+              data-reveal
           >
-            <img :src="partner.src" :alt="partner.alt" />
+            <img
+                :src="partner.src"
+                :alt="partner.alt"
+                loading="lazy"
+                decoding="async"
+            />
           </div>
         </div>
       </div>
@@ -171,7 +194,7 @@
 </template>
 
 <script>
-import { computed, onBeforeUnmount, onMounted, ref } from 'vue';
+import { computed, nextTick, onBeforeUnmount, onMounted, ref } from 'vue';
 import { useRouter } from 'vue-router';
 import { useI18n } from 'vue-i18n';
 
@@ -190,6 +213,9 @@ export default {
   setup() {
     const router = useRouter();
     const { t, te } = useI18n();
+
+    const homeRef = ref(null);
+    const revealObserver = ref(null);
 
     const animatedClients = ref(0);
     const animatedProjects = ref(0);
@@ -283,18 +309,62 @@ export default {
       router.push(path);
     };
 
+    const initRevealAnimations = async () => {
+      await nextTick();
+
+      if (!homeRef.value) return;
+
+      const elements = homeRef.value.querySelectorAll('[data-reveal]');
+
+      if (!elements.length) return;
+
+      if (!('IntersectionObserver' in window)) {
+        elements.forEach((element) => {
+          element.classList.add('is-visible');
+        });
+
+        return;
+      }
+
+      revealObserver.value = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) return;
+
+              entry.target.classList.add('is-visible');
+              revealObserver.value.unobserve(entry.target);
+            });
+          },
+          {
+            threshold: 0.14,
+            rootMargin: '0px 0px -45px 0px',
+          }
+      );
+
+      elements.forEach((element, index) => {
+        element.style.setProperty('--reveal-delay', `${Math.min(index * 70, 420)}ms`);
+        revealObserver.value.observe(element);
+      });
+    };
+
     onMounted(() => {
       startCounting(74, animatedClients);
       startCounting(55, animatedProjects);
       startCounting(80, animatedEmployees);
+      initRevealAnimations();
     });
 
     onBeforeUnmount(() => {
       timers.forEach((timer) => clearInterval(timer));
+
+      if (revealObserver.value) {
+        revealObserver.value.disconnect();
+      }
     });
 
     return {
       modules: [Navigation, Pagination, Autoplay],
+      homeRef,
       images,
       imageHomepage,
       homepageWorker,

@@ -31,7 +31,7 @@
 
     <div class="mamont-art-footer__white-band">
       <div class="container mamont-art-footer__white-inner">
-        <nav class="mamont-art-footer__nav" aria-label="Footer navigation">
+        <nav class="mamont-art-footer__nav mb-2" aria-label="Footer navigation">
           <button
               v-for="item in navItems"
               :key="item.route"

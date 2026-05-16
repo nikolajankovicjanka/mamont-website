@@ -29,6 +29,7 @@ $mamont-white: #ffffff;
     position: relative;
     display: flex;
     align-items: center;
+    overflow: hidden;
 }
 
 .mamont-hero__image {
@@ -39,6 +40,23 @@ $mamont-white: #ffffff;
     object-fit: cover;
     object-position: center;
     transform: scale(1.03);
+}
+
+.mamont-image-zoom {
+    animation: mamontHeroImageIn 1.35s ease both;
+    transform-origin: center;
+}
+
+@keyframes mamontHeroImageIn {
+    from {
+        opacity: 0;
+        transform: scale(1.09);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1.03);
+    }
 }
 
 .mamont-hero__overlay {
@@ -111,7 +129,15 @@ $mamont-white: #ffffff;
     font-size: 0.9rem;
     letter-spacing: 0.02em;
     cursor: pointer;
-    transition: all 0.22s ease;
+    transition:
+            transform 0.22s ease,
+            box-shadow 0.22s ease,
+            background-color 0.22s ease,
+            color 0.22s ease;
+}
+
+.mamont-btn:hover {
+    transform: translateY(-3px);
 }
 
 .mamont-btn--primary {
@@ -121,7 +147,6 @@ $mamont-white: #ffffff;
 }
 
 .mamont-btn--primary:hover {
-    transform: translateY(-2px);
     box-shadow: 0 24px 45px rgba(40, 110, 171, 0.34);
 }
 
@@ -134,7 +159,6 @@ $mamont-white: #ffffff;
 
 .mamont-btn--ghost:hover {
     background: rgba(255, 255, 255, 0.18);
-    transform: translateY(-2px);
 }
 
 .mamont-btn--light {
@@ -143,8 +167,24 @@ $mamont-white: #ffffff;
 }
 
 .mamont-btn--light:hover {
-    transform: translateY(-2px);
     box-shadow: 0 16px 30px rgba(0, 0, 0, 0.18);
+}
+
+/* REVEAL ANIMATIONS */
+
+.mamont-home [data-reveal] {
+    opacity: 0;
+    transform: translateY(34px);
+    transition:
+            opacity 0.78s ease,
+            transform 0.78s cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: var(--reveal-delay, 0ms);
+    will-change: opacity, transform;
+}
+
+.mamont-home [data-reveal].is-visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* STATS */
@@ -169,6 +209,15 @@ $mamont-white: #ffffff;
     padding: 1.85rem;
     box-shadow: 0 24px 70px rgba(18, 58, 90, 0.14);
     text-align: center;
+    transition:
+            transform 0.28s ease,
+            box-shadow 0.28s ease,
+            border-color 0.28s ease;
+}
+
+.mamont-stat-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 32px 80px rgba(18, 58, 90, 0.18);
 }
 
 .mamont-stat-card h2 {
@@ -233,15 +282,18 @@ $mamont-white: #ffffff;
 .mamont-feature-card {
     min-height: 280px;
     background: $mamont-white;
-    border: 1px solid $mamont-border;
+    border: 1px solid transparent;
     border-radius: 28px;
     padding: 2rem;
     box-shadow: 0 18px 45px rgba(18, 58, 90, 0.07);
-    transition: all 0.22s ease;
+    transition:
+            transform 0.28s ease,
+            box-shadow 0.28s ease,
+            border-color 0.28s ease;
 }
 
 .mamont-feature-card:hover {
-    transform: translateY(-6px);
+    transform: translateY(-8px);
     box-shadow: 0 28px 70px rgba(18, 58, 90, 0.12);
     border-color: rgba(40, 110, 171, 0.28);
 }
@@ -255,6 +307,14 @@ $mamont-white: #ffffff;
     background: $mamont-blue-soft;
     font-size: 1.65rem;
     margin-bottom: 1.35rem;
+    transition:
+            transform 0.28s ease,
+            background-color 0.28s ease;
+}
+
+.mamont-feature-card:hover .mamont-feature-card__icon {
+    transform: translateY(-3px) scale(1.04);
+    background: rgba(40, 110, 171, 0.13);
 }
 
 .mamont-feature-card h3 {
@@ -287,6 +347,7 @@ $mamont-white: #ffffff;
 .mamont-project-band__image-wrap {
     position: relative;
     min-height: 420px;
+    overflow: visible;
 }
 
 .mamont-project-band__image-wrap img {
@@ -297,6 +358,16 @@ $mamont-white: #ffffff;
     max-height: 520px;
     max-width: 100%;
     object-fit: contain;
+    filter: drop-shadow(0 26px 40px rgba(0, 0, 0, 0.22));
+    transition:
+            transform 0.55s ease,
+            filter 0.55s ease;
+    will-change: transform;
+}
+
+.mamont-project-band__image-wrap:hover img {
+    transform: translateX(-50%) scale(1.045);
+    filter: drop-shadow(0 32px 52px rgba(0, 0, 0, 0.28));
 }
 
 .mamont-project-band__content {
@@ -341,6 +412,15 @@ $mamont-white: #ffffff;
     height: 560px;
     object-fit: cover;
     display: block;
+    transition:
+            transform 0.65s ease,
+            filter 0.65s ease;
+    will-change: transform;
+}
+
+.mamont-team-preview__image-wrap:hover img {
+    transform: scale(1.045);
+    filter: brightness(1.04);
 }
 
 /* PARTNERS */
@@ -358,17 +438,21 @@ $mamont-white: #ffffff;
 .mamont-partners__item {
     min-height: 120px;
     background: $mamont-white;
-    border: 1px solid $mamont-border;
+    border: 1px solid transparent;
     border-radius: 22px;
     display: grid;
     place-items: center;
     padding: 1.25rem;
     box-shadow: 0 14px 35px rgba(18, 58, 90, 0.06);
-    transition: all 0.22s ease;
+    overflow: hidden;
+    transition:
+            transform 0.28s ease,
+            box-shadow 0.28s ease,
+            border-color 0.28s ease;
 }
 
 .mamont-partners__item:hover {
-    transform: translateY(-4px);
+    transform: translateY(-8px);
     border-color: rgba(40, 110, 171, 0.28);
     box-shadow: 0 22px 55px rgba(18, 58, 90, 0.11);
 }
@@ -379,10 +463,15 @@ $mamont-white: #ffffff;
     object-fit: contain;
     filter: grayscale(1);
     opacity: 0.72;
-    transition: all 0.22s ease;
+    transition:
+            transform 0.45s ease,
+            filter 0.28s ease,
+            opacity 0.28s ease;
+    will-change: transform;
 }
 
 .mamont-partners__item:hover img {
+    transform: scale(1.045);
     filter: grayscale(0);
     opacity: 1;
 }
@@ -551,6 +640,10 @@ $mamont-white: #ffffff;
         display: block;
     }
 
+    .mamont-project-band__image-wrap:hover img {
+        transform: scale(1.035);
+    }
+
     .mamont-project-band__image-wrap {
         min-height: auto;
     }
@@ -573,5 +666,28 @@ $mamont-white: #ffffff;
 
     .mamont-hero__content p {
         font-size: 0.9rem;
+    }
+}
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+    .mamont-home [data-reveal],
+    .mamont-image-zoom,
+    .mamont-stat-card,
+    .mamont-feature-card,
+    .mamont-feature-card__icon,
+    .mamont-project-band__image-wrap img,
+    .mamont-team-preview__image-wrap img,
+    .mamont-partners__item,
+    .mamont-partners__item img,
+    .mamont-btn {
+        animation: none !important;
+        transition: none !important;
+        transform: none !important;
+    }
+
+    .mamont-home [data-reveal] {
+        opacity: 1;
     }
 }
