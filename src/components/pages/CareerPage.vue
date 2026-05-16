@@ -258,7 +258,7 @@
                   </strong>
 
                   <small>
-                    {{ label('career.file.limit', 'Maksimalna veličina dokumenta je 10 MB.') }}
+                    {{ label('career.file.limit', 'Maksimalna veličina dokumenta je 10 MB') }}
                   </small>
                 </div>
               </label>

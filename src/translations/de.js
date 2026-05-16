@@ -267,7 +267,7 @@ export default {
 
         placeholders: {
             full_name: 'Geben Sie Ihren Vor- und Nachnamen ein',
-            email: 'name@email.com',
+            email: "name{'@'}email.com",
             phone: '+387 / +386 / +49',
             location: 'Stadt / Land',
             position: 'Position auswählen',

@@ -267,7 +267,7 @@ export default {
 
         placeholders: {
             full_name: 'Unesite ime i prezime',
-            email: 'ime@email.com',
+            email: "ime{'@'}email.com",
             phone: '+387 / +386 / +49',
             location: 'Grad / država',
             position: 'Odaberite poziciju',
