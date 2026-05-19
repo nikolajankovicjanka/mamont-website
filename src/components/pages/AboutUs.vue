@@ -41,7 +41,7 @@
         <div class="mamont-about-intro__grid">
           <div class="mamont-about-intro__content">
             <span class="mamont-about__eyebrow">
-              {{ label('about_us.ko_smo_mi', 'Ko smo mi') }}
+              {{ label('about_us.ko_smo_mi', 'Ko smo mi?') }}
             </span>
 
             <h2>{{ label('about_us.ko_smo_mi', 'Ko smo mi') }}</h2>
