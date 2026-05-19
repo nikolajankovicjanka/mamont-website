@@ -321,7 +321,7 @@ export default {
         return;
       }
 
-      const accessKey = process.env.VUE_APP_WEB3FORMS_ACCESS_KEY || '5788c306-268a-4b7f-a3f6-563067471674';
+      const accessKey = process.env.VUE_APP_WEB3FORMS_ACCESS_KEY || '88c40549-e7ad-4713-94c6-867f619098f7';
 
       if (!accessKey) {
         errorMessage.value = label(
