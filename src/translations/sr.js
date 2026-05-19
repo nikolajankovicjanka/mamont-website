@@ -241,7 +241,7 @@ export default {
 
         form_eyebrow: 'Prijava za posao',
         form_title: 'Pošalji svoje podatke',
-        form_description: 'Popunite formu i priložite CV u PDF, DOC ili DOCX formatu. Naš tim će pregledati prijavu i kontaktirati vas ukoliko postoji odgovarajuća pozicija.',
+        form_description_no_upload: 'Popunite formu i po želji dodajte link do CV-a ili dokumenta. Naš tim će pregledati prijavu i kontaktirati vas ukoliko postoji odgovarajuća pozicija.',
 
         note_title: 'Napomena',
         note_text: 'Polja označena zvjezdicom su obavezna.',

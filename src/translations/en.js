@@ -241,7 +241,7 @@ export default {
 
         form_eyebrow: 'Job application',
         form_title: 'Send your details',
-        form_description: 'Fill in the form and attach your CV in PDF, DOC or DOCX format. Our team will review your application and contact you if there is a suitable position.',
+        form_description_no_upload: 'Fill out the form and optionally add a link to your CV or document. Our team will review your application and contact you if there is a suitable position.',
 
         note_title: 'Note',
         note_text: 'Fields marked with an asterisk are required.',

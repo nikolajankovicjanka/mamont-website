@@ -241,7 +241,7 @@ export default {
 
         form_eyebrow: 'Bewerbung',
         form_title: 'Senden Sie Ihre Daten',
-        form_description: 'Füllen Sie das Formular aus und fügen Sie Ihren Lebenslauf im PDF-, DOC- oder DOCX-Format bei. Unser Team prüft Ihre Bewerbung und kontaktiert Sie, falls eine passende Position verfügbar ist.',
+        form_description_no_upload: 'Füllen Sie das Formular aus und fügen Sie bei Bedarf einen Link zu Ihrem Lebenslauf oder Dokument hinzu. Unser Team wird Ihre Bewerbung prüfen und Sie kontaktieren, falls eine passende Position verfügbar ist.',
 
         note_title: 'Hinweis',
         note_text: 'Mit einem Sternchen gekennzeichnete Felder sind Pflichtfelder.',
